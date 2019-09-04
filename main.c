@@ -16,8 +16,6 @@
 int main()
 {
 	printf("Hello, Mr.Filler!\n");
-
-	printf("Hello, Mr.Filler!\n");
 	if (1)
 	{
 		printf("\n---------TEST libft---------\n");

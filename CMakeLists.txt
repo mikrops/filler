@@ -3,7 +3,7 @@ project(filler C)
 
 set(CMAKE_C_STANDARD 90)
 
-add_executable(filler main.c filler.h
+add_executable(mmonahan.filler main.c filler.h
         libft/ft_memset.c
         libft/ft_bzero.c
         libft/ft_memcpy.c
