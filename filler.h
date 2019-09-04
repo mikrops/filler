@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/04 18:46:39 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/04 19:08:17 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,24 @@
 # include "get_next_line/get_next_line.h"
 
 /*
-**	координаты точки
+**	The board
 */
 
-typedef struct	s_filler
+typedef struct	s_plateau
 {
 	int 		x;
 	int 		n;
-}				t_filler;
+}				t_plateau;
+
+/*
+**	The tokens
+*/
+
+typedef struct	s_piece
+{
+	int 		x;
+	int 		n;
+}				t_piece;
+
+
 #endif

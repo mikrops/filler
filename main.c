@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/04 18:21:02 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/04 18:40:45 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 
 		str = "abc";
 		i = 1;
-		fd = open("../test.txt", O_RDONLY);
+		fd = open("test.txt", O_RDONLY);
 		while (i > 0)
 		{
 			i = get_next_line(fd, &str);
