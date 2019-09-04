@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/04 19:08:17 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/04 19:58:58 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,17 @@ typedef struct	s_piece
 	int 		x;
 	int 		n;
 }				t_piece;
+
+/*
+**	The player
+*/
+
+typedef struct	s_player
+{
+	char 		first;
+	char 		last;
+}				t_player;
+
 
 
 #endif
