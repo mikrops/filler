@@ -1,4 +1,4 @@
-/Users/mmonahan/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/mmonahan/school21/git/filler
+/Users/mmonahan/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/mmonahan/school21/git/filler
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/mmonahan/school21/git/filler/cmake-build-debug
