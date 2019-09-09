@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/04 19:58:58 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/09 20:23:49 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@
 
 typedef struct	s_plateau
 {
+	char 		**plateau;
 	int 		x;
 	int 		n;
+	int			flag;
 }				t_plateau;
 
 /*
@@ -32,6 +34,7 @@ typedef struct	s_plateau
 
 typedef struct	s_piece
 {
+	char 		**piece;
 	int 		x;
 	int 		n;
 }				t_piece;
