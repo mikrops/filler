@@ -25,7 +25,6 @@ typedef struct	s_plateau
 	char 		**plateau;
 	int 		x;
 	int 		n;
-	int			flag;
 }				t_plateau;
 
 /*
