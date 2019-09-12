@@ -19,26 +19,26 @@ int		check = 1; // активировать проверки, потом убр�
 /*
 **	Определяем номер игрока
 */
-void	player_definition(t_player *plr)
+void	player_definition(t_player *player)
 {
 	char *str;
 
 	get_next_line(0, &str);
 	if (str[10] == '1')
 	{
-		plr->first = 'O';
-		plr->last = 'o';
+		player->first = 'O';
+		player->last = 'o';
 	}
 	else if (str[10] == '2')
 	{
-		plr->first = 'X';
-		plr->last = 'x';
+		player->first = 'X';
+		player->last = 'x';
 	}
 
 	if (check) // проверка на игрока
 	{
 		ft_putstr_fd("->player ", fd);
-		ft_putnbr_fd(plr->first == 'O' ? 1 : 2, fd);
+		ft_putnbr_fd(player->first == 'O' ? 1 : 2, fd);
 		ft_putstr_fd("<-\n", fd);
 	}
 }
@@ -46,33 +46,33 @@ void	player_definition(t_player *plr)
 /*
 **	Определяем размеры игрового поля
 */
-void	plateau_definition(t_plateau *plt)
+void	plateau_definition(t_plateau *plateau)
 {
 	char *str;
 
-	plt->n = 0;
-	plt->x = 0;
+	plateau->n = 0;
+	plateau->x = 0;
 	get_next_line(0, &str);
 	str += 8;
 	while (*str && *str != ' ')
 	{
 		if (ft_isdigit(*str))
-			plt->n = plt->n * 10 + *str - '0';
+			plateau->n = plateau->n * 10 + *str - '0';
 		str++;
 	}
 	while (*str)
 	{
 		if (ft_isdigit(*str))
-			plt->x = plt->x * 10 + *str - '0';
+			plateau->x = plateau->x * 10 + *str - '0';
 		str++;
 	}
 
 	if (check) // проверка на координаты
 	{
 		ft_putstr_fd("->по N - ", fd);
-		ft_putnbr_fd(plt->n, fd);
+		ft_putnbr_fd(plateau->n, fd);
 		ft_putstr_fd("<-\n->по X - ", fd);
-		ft_putnbr_fd(plt->x, fd);
+		ft_putnbr_fd(plateau->x, fd);
 		ft_putstr_fd("<-\n", fd);
 	}
 }
@@ -85,14 +85,31 @@ void	creat_plateau(t_plateau *plt)
 	int i;
 
 	i = 0;
-	plt->plateau = (char **)malloc(sizeof(char *) * plt->n + 1);
-	plt->plateau[plt->n + 1] = NULL;
+	plt->board = (char **)ft_memalloc(sizeof(char *) * plt->n + 1);
+	plt->board[plt->n] = NULL;
 	while (i < plt->n)
 	{
-		plt->plateau[i] = (char *)malloc(sizeof(char) * plt->x + 1);
-		plt->plateau[i][plt->x + 1] = '\0';
+		plt->board[i] = (char *)ft_memalloc(sizeof(char) * plt->x + 1);
+		plt->board[i][plt->x] = '\0';
 		i++;
 	}
+
+}
+char	**creat_matrix(int row, int col)
+{
+	char **matrix;
+	int i;
+
+	i = 0;
+	matrix = (char **)ft_memalloc(sizeof(char *) * row + 1);
+	matrix[row] = NULL;
+	while (i < row)
+	{
+		matrix[i] = (char *)ft_memalloc(sizeof(char) * col + 1);
+		matrix[i][col] = '\0';
+		i++;
+	}
+	return (matrix);
 }
 /*
 $$$ exec p2 : [./mmonahan.filler]
@@ -244,22 +261,23 @@ Piece 16 14:
 /*
 **	Заполняем карту (ДОДЕЛАТЬ!!!)
 */
-void	aggregate_plateau(t_plateau *plt)
+void	aggregate_plateau(t_plateau *plateau)
 {
 	char	*str;
 	int		i;
 	int		j;
 
-	str = "abc";
+	str = ft_memalloc(1);
 	i = 0;
 	j = 0;
+
 	get_next_line(0, &str);// пропускаем строку с номерами столбцов
-	while (j < plt->n)
+	while (j < plateau->n)
 	{
 		get_next_line(0, &str);
-		while (i < plt->x)
+		while (i < plateau->x)
 		{
-			plt->plateau[j][i] = str[i + 4];
+			plateau->board[j][i] = str[i + 4];
 			i++;
 		}
 		i = 0;
@@ -270,26 +288,26 @@ void	aggregate_plateau(t_plateau *plt)
 /*
 **	Выводим в файл test.txt карту
 */
-void	print_plateau(t_plateau *plt)
+void	print_plateau(t_plateau *plateau)
 {
-	//вывод проверка plt.plateau
+	//вывод проверка plt.board
 
-	int i;
-	int j;
+	int col;
+	int row;
 
-	i = 0;
-	j = 0;
+	col = 0;
+	row = 0;
 	ft_putstr_fd("---+------------+----------+---\n", fd);
-	while (j < plt->n)
+	while (row < plateau->n)
 	{
-		while (i < plt->x)
+		while (col < plateau->x)
 		{
-			ft_putchar_fd(plt->plateau[j][i], fd);
-			i++;
+			ft_putchar_fd(plateau->board[row][col], fd);
+			col++;
 		}
 		ft_putstr_fd("\n", fd);
-		i = 0;
-		j++;
+		col = 0;
+		row++;
 	}
 	ft_putstr_fd("---+------------+----------+---\n", fd);
 }
@@ -310,25 +328,26 @@ int main()
 {
 	if (1)
 	{
-		t_player 	p;
-		t_plateau	plt;
+		t_player 	player;
+		t_plateau	plateau;
 		int			i;
 		char		*str;
 		//int			fd; //пока есть глобальная, но потом она уйдет она для проверки
 		char		*stop = "qq";
 
 		str = "abc";
-		p.first = 'X';
-		p.last = 'x';
+		player.first = 'X';
+		player.last = 'x';
 
 		fd = open("test.txt", O_WRONLY);
-		player_definition(&p); // Читаем номер игрока
-		plateau_definition(&plt);//, str); //читаем размер поля и малочим его
-		creat_plateau(&plt); // выделяем память под карту в plt.plateau
-		aggregate_plateau(&plt); //заполнение карты
+		player_definition(&player); // Читаем номер игрока
+		plateau_definition(&plateau);//, str); //читаем размер поля и малочим его
+		//creat_plateau(&plateau); // выделяем память под карту в board.board
+		plateau.board = creat_matrix(plateau.n, plateau.x);
+		aggregate_plateau(&plateau); //заполнение карты
 
 		if (check)
-			print_plateau(&plt); //вывод карты
+			print_plateau(&plateau); //вывод карты
 
 		while (1)
 		{
