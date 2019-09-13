@@ -23,9 +23,8 @@
 typedef struct	s_plateau
 {
 	char 		**board;
-	int 		x;
-	int 		n;
-
+	int 		x; //columns
+	int 		n; //lines
 }				t_plateau;
 
 /*
@@ -35,8 +34,8 @@ typedef struct	s_plateau
 typedef struct	s_piece
 {
 	char 		**token;
-	int 		x;
-	int 		n;
+	int 		x; //columns
+	int 		n; //lines
 }				t_piece;
 
 /*

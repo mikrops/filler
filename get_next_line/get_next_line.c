@@ -46,34 +46,35 @@
 **	использоваться для сохранения строки, прочитанной из файлового дескриптора.
 */
 
-//int	get_next_line(const int fd, char **line)
-//{
-//	static char	*m[10240];
-//	int			ret;
-//	char		buf[BUFF_SIZE + 1];
-//	char		*tmp;
-//
-//	if (fd < 0 || fd >= 10240 || line == NULL)
-//		return (-1);
-//	if (ft_memset(buf, 0, BUFF_SIZE + 1) && (ret = 1) && m[fd] == NULL)
-//		m[fd] = ft_memalloc(1);
-//	while (ft_strchr(m[fd], '\n') == NULL && (ret = read(fd, buf, BUFF_SIZE)))
-//	{
-//		if ((tmp = m[fd]) && ret < 0)
-//			return (-1);
-//		if ((m[fd] = ft_strjoin(tmp, buf)) && ft_memset(buf, 0, BUFF_SIZE + 1))
-//			ft_strdel(&tmp);
-//		if (ft_strchr(m[fd], '\n') != NULL || ret != BUFF_SIZE)
-//			break ;
-//	}
-//	*line = ft_strchr(m[fd], '\n') ? ft_strsub(m[fd], 0, ft_charcount(m[fd],'\n')) :ft_strsub(m[fd], 0, ft_strlen(m[fd]) + 1);
-//	tmp = m[fd];
-//	m[fd] = ft_strsub(tmp, ft_charcount(tmp, '\n') + 1, ft_strlen(tmp) - ft_charcount(tmp, '\n'));
-//	ft_strdel(&tmp);
-//	return (!(!ret && !ft_strlen(*line)));
-//}
+int	get_next_line(const int fd, char **line)
+{
+	static char	*m[10240];
+	int			ret;
+	char		buf[BUFF_SIZE + 1];
+	char		*tmp;
+
+	if (fd < 0 || fd >= 10240 || line == NULL)
+		return (-1);
+	if (ft_memset(buf, 0, BUFF_SIZE + 1) && (ret = 1) && m[fd] == NULL)
+		m[fd] = ft_memalloc(1);
+	while (ft_strchr(m[fd], '\n') == NULL && (ret = read(fd, buf, BUFF_SIZE)))
+	{
+		if ((tmp = m[fd]) && ret < 0)
+			return (-1);
+		if ((m[fd] = ft_strjoin(tmp, buf)) && ft_memset(buf, 0, BUFF_SIZE + 1))
+			ft_strdel(&tmp);
+		if (ft_strchr(m[fd], '\n') != NULL || ret != BUFF_SIZE)
+			break ;
+	}
+	*line = ft_strchr(m[fd], '\n') ? ft_strsub(m[fd], 0, ft_charcount(m[fd],'\n')) :ft_strsub(m[fd], 0, ft_strlen(m[fd]) + 1);
+	tmp = m[fd];
+	m[fd] = ft_strsub(tmp, ft_charcount(tmp, '\n') + 1, ft_strlen(tmp) - ft_charcount(tmp, '\n'));
+	ft_strdel(&tmp);
+	return (!(!ret && !ft_strlen(*line)));
+}
 
 
+/*
 int		line_verif(char **line, char **tmp, int res, char **str)
 {
 	*str = NULL;
@@ -139,3 +140,4 @@ int		get_next_line(int const fd, char **line)
 	free(buf);
 	return (1);
 }
+*/
