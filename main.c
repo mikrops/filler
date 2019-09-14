@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/10 20:49:42 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/14 19:04:06 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 int		fd; // для проверки, потом убрать!!!
 int		check = 1; // активировать проверки, потом убрать
-void	print_matrix(char **matrix, int row, int col);
+void	print_matrix(char **matrix, int row, int col); // для теста, потмо убрать
+void	print_heatmap(int **heatmap, int row, int col);
 
 /*
 **	Выделяем область памяти для матрицы[row][col]
@@ -76,13 +77,15 @@ void	player_definition(t_player *player)
 	get_next_line(0, &str);
 	if (str[10] == '1')
 	{
-		player->first = 'O';
-		player->last = 'o';
+		player->number = 1;
+		player->x = 'O';
+		player->n = 'o';
 	}
 	else if (str[10] == '2')
 	{
-		player->first = 'X';
-		player->last = 'x';
+		player->number = 2;
+		player->x = 'X';
+		player->n = 'x';
 	}
 }
 
@@ -121,8 +124,6 @@ void	get_coordinates(int *n, int *x)
 }
 
 
-
-
 /*
 **	Галвная
 */
@@ -134,12 +135,11 @@ int main()
 		t_plateau	plateau;
 		t_piece		piece;
 		char		*str;
-		//int			fd; //пока есть глобальная, но потом она уйдет она для проверки
 		char		*stop = "qq";
 
 		str = "abc";
-		player.first = 'X';
-		player.last = 'x';
+		player.x = 'X';
+		player.n = 'x';
 
 		fd = open("test.txt", O_WRONLY);
 
@@ -156,12 +156,15 @@ int main()
 		//aggregate_piece(&piece);
 		fill_matrix(piece.token, piece.n, piece.x);
 
+		// создание тепловой карты
+		heat_map(&plateau, piece, player);
+
 		if (1)
 		{
 			if (check) // проверка на игрока
 			{
 				ft_putstr_fd("->player ", fd);
-				ft_putnbr_fd(player.first == 'O' ? 1 : 2, fd);
+				ft_putnbr_fd(player.number, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
 			if (check) // проверка на координаты доски
@@ -185,6 +188,8 @@ int main()
 			}
 			if (check)
 				print_matrix(piece.token, piece.n, piece.x); //вывод токена
+			if (check)
+				print_heatmap(plateau.heatmap, plateau.n, plateau.x); //вывод тепловой
 		}
 		while (1)
 		{
@@ -201,7 +206,7 @@ int main()
 			else if (str[2] == 'i')
 				; // определяем фигуру
 			// вычисляем координаты и выводим результат
-			write(1, "0 0\n", 4);
+			write(1, "8 1\n", 4);
 
 			//один раз--
 			//поймать игрока-++++++++++
@@ -249,6 +254,28 @@ void	print_matrix(char **matrix, int row, int col)
 		while (i < col)
 		{
 			ft_putchar_fd(matrix[j][i], fd);
+			i++;
+		}
+		ft_putstr_fd("\n", fd);
+		i = 0;
+		j++;
+	}
+	ft_putstr_fd("---+------------+----------+---\n", fd);
+}
+
+void	print_heatmap(int **heatmap, int row, int col)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	ft_putstr_fd("---+------------+----------+---\n", fd);
+	while (j < row)
+	{
+		while (i < col)
+		{
+			ft_putnbr_fd(heatmap[j][i], fd);
 			i++;
 		}
 		ft_putstr_fd("\n", fd);

@@ -150,6 +150,33 @@ get_next_line/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.s
 .PHONY : get_next_line/get_next_line.c.s
 
+heat_map.o: heat_map.c.o
+
+.PHONY : heat_map.o
+
+# target to build an object file
+heat_map.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/heat_map.c.o
+.PHONY : heat_map.c.o
+
+heat_map.i: heat_map.c.i
+
+.PHONY : heat_map.i
+
+# target to preprocess a source file
+heat_map.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/heat_map.c.i
+.PHONY : heat_map.c.i
+
+heat_map.s: heat_map.c.s
+
+.PHONY : heat_map.s
+
+# target to generate assembly for a file
+heat_map.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/heat_map.c.s
+.PHONY : heat_map.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -1998,6 +2025,9 @@ help:
 	@echo "... get_next_line/get_next_line.o"
 	@echo "... get_next_line/get_next_line.i"
 	@echo "... get_next_line/get_next_line.s"
+	@echo "... heat_map.o"
+	@echo "... heat_map.i"
+	@echo "... heat_map.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

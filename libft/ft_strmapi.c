@@ -14,7 +14,7 @@
 
 /*
 **	Description: Applies the function f to each character of the string passed
-**	as argument by giving its index as first argument to create a “fresh” new
+**	as argument by giving its index as x argument to create a “fresh” new
 **	string (with malloc(3)) resulting from the successive applications of f.
 **
 **	Param. #1: The string to map.

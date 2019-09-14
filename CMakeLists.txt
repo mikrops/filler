@@ -73,7 +73,8 @@ add_executable(mmonahan.filler main.c filler.h
         libft/ft_del.c
         libft/libft.h
         get_next_line/get_next_line.c
-        get_next_line/get_next_line.h)
+        get_next_line/get_next_line.h
+        heat_map.c)
 
 
 

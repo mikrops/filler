@@ -89,6 +89,9 @@
 		<Unit filename="/Users/mmonahan/school21/git/filler/get_next_line/get_next_line.h">
 			<Option target="mmonahan.filler"/>
 		</Unit>
+		<Unit filename="/Users/mmonahan/school21/git/filler/heat_map.c">
+			<Option target="mmonahan.filler"/>
+		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_atoi.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>

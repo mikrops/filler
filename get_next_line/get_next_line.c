@@ -24,7 +24,7 @@
 **	respectively.
 **	Your function get_next_line must return its result without ’\n’.
 **
-**	The first parameter is the file descriptor that will be used to read.
+**	The x parameter is the file descriptor that will be used to read.
 **	The second parameter is the address of a pointer to a character that
 **	will be used to save the line read from the file descriptor.
 **
