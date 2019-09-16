@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mmonahan/school21/git/filler/filler.h
+libft/libft.h
+/Users/mmonahan/school21/git/filler/libft/libft.h
+get_next_line/get_next_line.h
+/Users/mmonahan/school21/git/filler/get_next_line/get_next_line.h
+
+/Users/mmonahan/school21/git/filler/get_next_line/get_next_line.h
+../libft/libft.h
+/Users/mmonahan/school21/git/filler/libft/libft.h
+fcntl.h
+-
+
+/Users/mmonahan/school21/git/filler/libft/libft.h
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+
+/Users/mmonahan/school21/git/filler/main.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+stdio.h
+-
+

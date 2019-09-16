@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/14 19:04:06 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/16 20:20:00 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	aggregate_plateau(t_plateau *plateau)
 }
 
 
-
 /*
 **	Определяем размеры фигуры по первой строке
 */
@@ -169,9 +168,9 @@ int main()
 			}
 			if (check) // проверка на координаты доски
 			{
-				ft_putstr_fd("->plateau по N - ", fd);
+				ft_putstr_fd("->plateau N - ", fd);
 				ft_putnbr_fd(plateau.n, fd);
-				ft_putstr_fd("<-\n->plateau по X - ", fd);
+				ft_putstr_fd("<-\n->plateau X - ", fd);
 				ft_putnbr_fd(plateau.x, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
@@ -180,9 +179,9 @@ int main()
 
 			if (check) // проверка на координаты токена
 			{
-				ft_putstr_fd("->piece по N - ", fd);
+				ft_putstr_fd("->piece N - ", fd);
 				ft_putnbr_fd(piece.n, fd);
-				ft_putstr_fd("<-\n->piece по X - ", fd);
+				ft_putstr_fd("<-\n->piece X - ", fd);
 				ft_putnbr_fd(piece.x, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
