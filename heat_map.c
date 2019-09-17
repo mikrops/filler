@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/14 18:54:48 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/17 20:49:19 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 
 int		fd_hm; // для проверки, потом убрать!!!
+void	print_heatmap(int **heatmap, int row, int col);
 
 /*
 **	Выделяем область памяти для матрицы[row][col]
 */
+
 int	**creat_heatmap(int row, int col)
 {
 	int **heatmap;
@@ -33,9 +35,11 @@ int	**creat_heatmap(int row, int col)
 
 	return (heatmap);
 }
+
 /*
 **	Заполнение матрицы[row][col] из потока 0
 */
+
 void	fill_heatmap(t_plateau *plateau, t_player player)
 {
 	int		i;
@@ -87,5 +91,31 @@ void heat_map(t_plateau *plateau, t_piece piece, t_player player)
 	if (piece.x)
 		;
 
+	if (1) //вывод тепловой
+		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
+
 	close(fd_hm);
+
+}
+
+void	print_heatmap(int **heatmap, int row, int col)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	ft_putstr_fd("---+------------+----------+---\n", fd_hm);
+	while (j < row)
+	{
+		while (i < col)
+		{
+			ft_putnbr_fd(heatmap[j][i], fd_hm);
+			i++;
+		}
+		ft_putstr_fd("\n", fd_hm);
+		i = 0;
+		j++;
+	}
+	ft_putstr_fd("---+------------+----------+---\n", fd_hm);
 }

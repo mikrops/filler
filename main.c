@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/16 20:20:00 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/17 20:41:54 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int		fd; // для проверки, потом убрать!!!
 int		check = 1; // активировать проверки, потом убрать
 void	print_matrix(char **matrix, int row, int col); // для теста, потмо убрать
-void	print_heatmap(int **heatmap, int row, int col);
+
 
 /*
 **	Выделяем область памяти для матрицы[row][col]
@@ -144,15 +144,13 @@ int main()
 
 		player_definition(&player); // определяем номер игрока
 
-
 		get_coordinates(&plateau.n, &plateau.x);// определяем размер для поля по первой строке
-		plateau.board = creat_matrix(plateau.n, plateau.x); // выделяем память под двумерный массив в board.board
+		plateau.board = creat_matrix(plateau.n, plateau.x); // выделяем память под двумерный массив в plateau.board
 		aggregate_plateau(&plateau); //заполнение двумерного массива
 
 
 		get_coordinates(&piece.n, &piece.x);// определяем размер токена по первой строке
-		piece.token = creat_matrix(piece.n, piece.x); // выделяем память под двумерный массив в board.board
-		//aggregate_piece(&piece);
+		piece.token = creat_matrix(piece.n, piece.x); // выделяем память под двумерный массив в piece.token
 		fill_matrix(piece.token, piece.n, piece.x);
 
 		// создание тепловой карты
@@ -166,7 +164,7 @@ int main()
 				ft_putnbr_fd(player.number, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
-			if (check) // проверка на координаты доски
+			if (1) // проверка на координаты доски
 			{
 				ft_putstr_fd("->plateau N - ", fd);
 				ft_putnbr_fd(plateau.n, fd);
@@ -174,10 +172,10 @@ int main()
 				ft_putnbr_fd(plateau.x, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
-			if (check)
-				print_matrix(plateau.board, plateau.n, plateau.x); //вывод карты
+			if (1) //вывод карты
+				print_matrix(plateau.board, plateau.n, plateau.x);
 
-			if (check) // проверка на координаты токена
+			if (1) // проверка на координаты токена
 			{
 				ft_putstr_fd("->piece N - ", fd);
 				ft_putnbr_fd(piece.n, fd);
@@ -185,10 +183,9 @@ int main()
 				ft_putnbr_fd(piece.x, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
-			if (check)
-				print_matrix(piece.token, piece.n, piece.x); //вывод токена
-			if (check)
-				print_heatmap(plateau.heatmap, plateau.n, plateau.x); //вывод тепловой
+			if (1) //вывод токена
+				print_matrix(piece.token, piece.n, piece.x);
+
 		}
 		while (1)
 		{
@@ -198,13 +195,15 @@ int main()
 			if (!ft_strcmp(str, stop))
 				return (1);
 			//читаем строку
-			if (str[0] == '$')
-				; //определяем игрока
-			else if (str[1] == 'l')
-				; // обрабатываем карту
-			else if (str[2] == 'i')
-				; // определяем фигуру
-			// вычисляем координаты и выводим результат
+//			if (str[0] == '$')
+//				; //определяем игрока
+//			else if (str[1] == 'l')
+//				; // обрабатываем карту
+//			else if (str[2] == 'i')
+//				; // определяем фигуру
+//			// вычисляем координаты и выводим результат
+//			ft_putstr_fd(str, fd);
+//			ft_putstr_fd("\n", fd);
 			write(1, "8 1\n", 4);
 
 			//один раз--
@@ -262,24 +261,3 @@ void	print_matrix(char **matrix, int row, int col)
 	ft_putstr_fd("---+------------+----------+---\n", fd);
 }
 
-void	print_heatmap(int **heatmap, int row, int col)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	ft_putstr_fd("---+------------+----------+---\n", fd);
-	while (j < row)
-	{
-		while (i < col)
-		{
-			ft_putnbr_fd(heatmap[j][i], fd);
-			i++;
-		}
-		ft_putstr_fd("\n", fd);
-		i = 0;
-		j++;
-	}
-	ft_putstr_fd("---+------------+----------+---\n", fd);
-}

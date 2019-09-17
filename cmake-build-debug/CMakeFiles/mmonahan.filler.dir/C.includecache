@@ -13,10 +13,26 @@ get_next_line/get_next_line.h
 /Users/mmonahan/school21/git/filler/get_next_line/get_next_line.h
 
 /Users/mmonahan/school21/git/filler/get_next_line/get_next_line.h
-../libft/libft.h
-/Users/mmonahan/school21/git/filler/libft/libft.h
 fcntl.h
 -
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+sys/types.h
+-
+sys/uio.h
+-
+unistd.h
+-
+../libft/libft.h
+/Users/mmonahan/school21/git/filler/libft/libft.h
+
+/Users/mmonahan/school21/git/filler/heat_map.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
 
 /Users/mmonahan/school21/git/filler/libft/libft.h
 string.h
