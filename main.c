@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/17 20:41:54 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/18 20:15:59 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**creat_matrix(int row, int col)
 	int i;
 
 	i = 0;
-	matrix = (char **)ft_memalloc(sizeof(char *) * row + 1);
+	matrix = (char **)ft_memalloc(sizeof(char *) * (row + 1));
 	matrix[row] = NULL;
 	while (i < row)
 	{
@@ -78,14 +78,14 @@ void	player_definition(t_player *player)
 	if (str[10] == '1')
 	{
 		player->number = 1;
-		player->x = 'O';
-		player->n = 'o';
+		player->x = -1;
+		player->n = -1;
 	}
 	else if (str[10] == '2')
 	{
 		player->number = 2;
-		player->x = 'X';
-		player->n = 'x';
+		player->x = -2;
+		player->n = -2;
 	}
 }
 

@@ -46,8 +46,8 @@ typedef struct	s_piece
 typedef struct	s_player
 {
 	int 		number;
-	char 		x;
-	char 		n;
+	int 		x;
+	int 		n;
 }				t_player;
 
 void			heat_map(t_plateau *plateau, t_piece piece, t_player player);
