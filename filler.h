@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/14 18:54:48 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/19 15:39:08 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct	s_piece
 	char 		**token;
 	int 		x; //columns
 	int 		n; //lines //row
+	int			length;
 }				t_piece;
 
 /*
@@ -51,5 +52,6 @@ typedef struct	s_player
 }				t_player;
 
 void			heat_map(t_plateau *plateau, t_piece piece, t_player player);
+void			insert_piece(t_plateau plateau, t_piece piece, t_player player);
 
 #endif

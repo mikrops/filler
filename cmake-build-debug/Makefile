@@ -177,6 +177,33 @@ heat_map.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/heat_map.c.s
 .PHONY : heat_map.c.s
 
+insert_piece.o: insert_piece.c.o
+
+.PHONY : insert_piece.o
+
+# target to build an object file
+insert_piece.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/insert_piece.c.o
+.PHONY : insert_piece.c.o
+
+insert_piece.i: insert_piece.c.i
+
+.PHONY : insert_piece.i
+
+# target to preprocess a source file
+insert_piece.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/insert_piece.c.i
+.PHONY : insert_piece.c.i
+
+insert_piece.s: insert_piece.c.s
+
+.PHONY : insert_piece.s
+
+# target to generate assembly for a file
+insert_piece.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/insert_piece.c.s
+.PHONY : insert_piece.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2028,6 +2055,9 @@ help:
 	@echo "... heat_map.o"
 	@echo "... heat_map.i"
 	@echo "... heat_map.s"
+	@echo "... insert_piece.o"
+	@echo "... insert_piece.i"
+	@echo "... insert_piece.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
