@@ -25,7 +25,7 @@ typedef struct	s_plateau
 	char 		**board;
 	int			**heatmap;
 	int 		x; //columns
-	int 		n; //lines
+	int 		n; //lines //row
 }				t_plateau;
 
 /*
@@ -36,7 +36,7 @@ typedef struct	s_piece
 {
 	char 		**token;
 	int 		x; //columns
-	int 		n; //lines
+	int 		n; //lines //row
 }				t_piece;
 
 /*
