@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/19 17:06:20 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:42:55 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		**creat_heatmap(int row, int col)
 **	Заполнение матрицы[row][col] из потока 0
 */
 
-void	init_heatmap(t_plateau *plateau, t_player player)
+void	init_heatmap(t_plateau *plateau, t_player *player)
 {
 	int		i;
 	int		j;
@@ -51,7 +51,7 @@ void	init_heatmap(t_plateau *plateau, t_player player)
 	{
 		while (i < plateau->x)
 		{
-			if (player.number == 1)
+			if (player->number == 1)
 			{
 				if (plateau->board[j][i] == 'O' || plateau->board[j][i] == 'o')
 					plateau->heatmap[j][i] = -2;
@@ -151,7 +151,7 @@ void	fill_heatmap(t_plateau *plateau, int **heatmap, int row, int col)
 }
 
 /*
-** заполнение тепловой
+** заполнение тепловой карты
 */
 
 void	fill_heatmap_full(t_plateau *plateau, int **heatmap, int row, int col)
@@ -173,9 +173,7 @@ void	fill_heatmap_full(t_plateau *plateau, int **heatmap, int row, int col)
 			while (i < col)
 			{
 				if (heatmap[j][i] == dot)
-				{
 					flag += insert_digit_cross(plateau, heatmap, j, i, dot);
-				}
 				i++;
 			}
 			i = 0;
@@ -193,7 +191,7 @@ void	fill_heatmap_full(t_plateau *plateau, int **heatmap, int row, int col)
 **	теловая карта
 */
 
-void heat_map(t_plateau *plateau, t_piece piece, t_player player)
+void heat_map(t_plateau *plateau, t_piece *piece, t_player *player)
 {
 	fd_hm = open("test_hm.txt", O_WRONLY);
 	if (!plateau->heatmap)
@@ -210,11 +208,9 @@ void heat_map(t_plateau *plateau, t_piece piece, t_player player)
 
 	if (1) //вывод тепловой
 		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
+
 	//заполнение всей
 	fill_heatmap_full(plateau, plateau->heatmap, plateau->n, plateau->x);
-
-	if (1) //вывод тепловой
-		;//print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 
 	close(fd_hm);
 }

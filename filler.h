@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/19 15:39:08 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/20 14:47:13 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ typedef struct	s_plateau
 {
 	char 		**board;
 	int			**heatmap;
-	int 		x; //columns
 	int 		n; //lines //row
+	int 		x; //columns
 }				t_plateau;
 
 /*
@@ -35,8 +35,8 @@ typedef struct	s_plateau
 typedef struct	s_piece
 {
 	char 		**token;
-	int 		x; //columns
 	int 		n; //lines //row
+	int 		x; //columns
 	int			length;
 }				t_piece;
 
@@ -47,11 +47,23 @@ typedef struct	s_piece
 typedef struct	s_player
 {
 	int 		number;
-	int 		x;
 	int 		n;
+	int 		x;
 }				t_player;
 
-void			heat_map(t_plateau *plateau, t_piece piece, t_player player);
-void			insert_piece(t_plateau plateau, t_piece piece, t_player player);
+/*
+**	The answer
+*/
+
+typedef struct	s_point
+{
+	int 		n;
+	int 		x;
+}				t_point;
+
+
+
+void			heat_map(t_plateau *plateau, t_piece *piece, t_player *player);
+void			insert_piece(t_plateau *plateau, t_piece *piece, t_point *point);
 
 #endif

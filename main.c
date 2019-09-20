@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/19 18:00:30 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/20 18:05:46 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ int main()
 		t_player 	player;
 		t_plateau	plateau;
 		t_piece		piece;
+		t_point		point;
 		char		*str;
 		char		*stop = "qq";
 
@@ -154,7 +155,7 @@ int main()
 		fill_matrix(piece.token, piece.n, piece.x);
 
 		// создание тепловой карты
-		heat_map(&plateau, piece, player);
+		heat_map(&plateau, &piece, &player);
 
 		if (1)
 		{
@@ -205,7 +206,22 @@ int main()
 //			ft_putstr_fd(str, fd);
 //			ft_putstr_fd("\n", fd);
 			//write(1, "8 1\n", 4);
-			insert_piece(plateau, piece, player);
+
+//			aggregate_plateau(&plateau); //заполнение двумерного массива
+//
+//			get_coordinates(&piece.n, &piece.x);// определяем размер токена по первой строке
+//			piece.token = creat_matrix(piece.n, piece.x); // выделяем память под двумерный массив в piece.token
+//			fill_matrix(piece.token, piece.n, piece.x);
+//
+//			// создание тепловой карты
+//			heat_map(&plateau, &piece, &player);
+
+			insert_piece(&plateau, &piece, &point);
+
+			ft_putnbr_fd(point.n, 1);
+			ft_putchar_fd(' ', 1);
+			ft_putnbr_fd(point.x, 1);
+			ft_putchar_fd('\n', 1);
 
 			//один раз--
 			//поймать игрока-++++++++++

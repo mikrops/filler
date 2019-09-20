@@ -70,6 +70,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.o"
   "CMakeFiles/mmonahan.filler.dir/heat_map.c.o"
   "CMakeFiles/mmonahan.filler.dir/insert_piece.c.o"
+  "CMakeFiles/mmonahan.filler.dir/print_answer.c.o"
   "mmonahan.filler.pdb"
   "mmonahan.filler"
 )

@@ -10,6 +10,11 @@ CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../heat_map.c
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../libft/libft.h
 
+CMakeFiles/mmonahan.filler.dir/insert_piece.c.o: ../filler.h
+CMakeFiles/mmonahan.filler.dir/insert_piece.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/mmonahan.filler.dir/insert_piece.c.o: ../insert_piece.c
+CMakeFiles/mmonahan.filler.dir/insert_piece.c.o: ../libft/libft.h
+
 CMakeFiles/mmonahan.filler.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/mmonahan.filler.dir/libft/ft_atoi.c.o: ../libft/libft.h
 
@@ -215,4 +220,9 @@ CMakeFiles/mmonahan.filler.dir/main.c.o: ../filler.h
 CMakeFiles/mmonahan.filler.dir/main.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/mmonahan.filler.dir/main.c.o: ../libft/libft.h
 CMakeFiles/mmonahan.filler.dir/main.c.o: ../main.c
+
+CMakeFiles/mmonahan.filler.dir/print_answer.c.o: ../filler.h
+CMakeFiles/mmonahan.filler.dir/print_answer.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/mmonahan.filler.dir/print_answer.c.o: ../libft/libft.h
+CMakeFiles/mmonahan.filler.dir/print_answer.c.o: ../print_answer.c
 
