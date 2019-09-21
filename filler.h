@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/20 14:47:13 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/21 20:37:45 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "libft/libft.h"
 # include "get_next_line/get_next_line.h"
+
+# define FIRST_STEP 0
+# define OTHER_STEPS 1
 
 /*
 **	The board

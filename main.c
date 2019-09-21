@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/20 18:05:46 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/21 21:02:12 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,13 @@ void	player_definition(t_player *player)
 /*
 **	Заполняем карту
 */
-void	aggregate_plateau(t_plateau *plateau)
+void	aggregate_plateau(t_plateau *plateau, int step)
 {
 	char	*str;
 
 	str = ft_memalloc(1);
+	if (step)
+		get_next_line(0, &str);// пропускаем строку с номерами столбцов
 	get_next_line(0, &str);// пропускаем строку с номерами столбцов
 	free(str);
 	fill_matrix(plateau->board, plateau->n, plateau->x);
@@ -137,6 +139,7 @@ int main()
 		char		*str;
 		char		*stop = "qq";
 
+		int i = 1;
 		str = "abc";
 		player.x = 'X';
 		player.n = 'x';
@@ -147,16 +150,17 @@ int main()
 
 		get_coordinates(&plateau.n, &plateau.x);// определяем размер для поля по первой строке
 		plateau.board = creat_matrix(plateau.n, plateau.x); // выделяем память под двумерный массив в plateau.board
-		aggregate_plateau(&plateau); //заполнение двумерного массива
+		aggregate_plateau(&plateau, FIRST_STEP); //заполнение двумерного массива
 
 
 		get_coordinates(&piece.n, &piece.x);// определяем размер токена по первой строке
 		piece.token = creat_matrix(piece.n, piece.x); // выделяем память под двумерный массив в piece.token
-		fill_matrix(piece.token, piece.n, piece.x);
+		//							// освобождаем память двумерного массива фигуры
+		fill_matrix(piece.token, piece.n, piece.x);// за массив фигуры
 
 		// создание тепловой карты
 		heat_map(&plateau, &piece, &player);
-
+		insert_piece(&plateau, &piece, &point);
 		if (1)
 		{
 			if (check) // проверка на игрока
@@ -195,6 +199,7 @@ int main()
 
 			if (!ft_strcmp(str, stop))
 				return (1);
+
 			//читаем строку
 //			if (str[0] == '$')
 //				; //определяем игрока
@@ -207,16 +212,24 @@ int main()
 //			ft_putstr_fd("\n", fd);
 			//write(1, "8 1\n", 4);
 
-//			aggregate_plateau(&plateau); //заполнение двумерного массива
+
+
+
+
+//			aggregate_plateau(&plateau, OTHER_STEPS); //заполнение двумерного массива
+//			//fill_matrix(plateau.board, plateau.n, plateau.x);
 //
 //			get_coordinates(&piece.n, &piece.x);// определяем размер токена по первой строке
 //			piece.token = creat_matrix(piece.n, piece.x); // выделяем память под двумерный массив в piece.token
-//			fill_matrix(piece.token, piece.n, piece.x);
+//			//							// освобождаем память двумерного массива фигуры
+//			fill_matrix(piece.token, piece.n, piece.x);// за массив фигуры
 //
 //			// создание тепловой карты
 //			heat_map(&plateau, &piece, &player);
-
 			insert_piece(&plateau, &piece, &point);
+
+
+			// ПРОПУСТИТЬ ДВЕ СТРОКИ А НЕ ОДНУ КОГДА ЗАПОЛНЯЮ ДОСКУ!!!
 
 			ft_putnbr_fd(point.n, 1);
 			ft_putchar_fd(' ', 1);
