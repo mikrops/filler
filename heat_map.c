@@ -212,6 +212,7 @@ void heat_map(t_plateau *plateau, t_piece *piece, t_player *player)
 	//заполнение всей
 	fill_heatmap_full(plateau, plateau->heatmap, plateau->n, plateau->x);
 
+	//ОБЯЗАТЕЛЬНО ФРИШИТЬ ФИГУРУ В ЭТОМ МЕСТЕ!
 	close(fd_hm);
 }
 
