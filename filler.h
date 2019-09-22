@@ -68,5 +68,6 @@ typedef struct	s_point
 
 void			heat_map(t_plateau *plateau, t_piece *piece, t_player *player);
 void			insert_piece(t_plateau *plateau, t_piece *piece, t_point *point);
+void			print_answer(t_point *point);
 
 #endif

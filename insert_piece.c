@@ -63,9 +63,6 @@ int		check_token_in_board(t_plateau *plateau, t_piece *piece, int row, int col)
 			}
 			if (piece->token[j][i] == '*' && plateau->heatmap[row + j][col + i] != -2)
 			{
-//				ft_putstr_fd("\t\tsum = \t", fd_ip);
-//				ft_putnbr_fd(sum, fd_ip);
-//				ft_putchar_fd('\n', fd_ip);
 				sum += plateau->heatmap[row + j][col + i];
 			}
 			if (overlap > 1)

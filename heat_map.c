@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/20 17:42:55 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/22 17:54:39 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,9 +182,11 @@ void	fill_heatmap_full(t_plateau *plateau, int **heatmap, int row, int col)
 		dot++;
 		j = 0;
 		i = 0;
-		if (flag)
+		if (0)//if (flag)
 			print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 	}
+	if (1)
+		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 }
 
 /*
@@ -201,12 +203,12 @@ void heat_map(t_plateau *plateau, t_piece *piece, t_player *player)
 	init_heatmap(plateau, player);
 
 
-	if (1) //вывод тепловой
+	if (0) //вывод тепловой
 		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 	//заполнение первого куска
 	fill_heatmap(plateau, plateau->heatmap, plateau->n, plateau->x);
 
-	if (1) //вывод тепловой
+	if (0) //вывод тепловой
 		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 
 	//заполнение всей

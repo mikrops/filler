@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/22 16:59:40 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/22 19:18:17 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void	fill_matrix(char **matrix, int row, int col)
 	int		j;
 	int		shift;
 
-	int gg = 0;
-
 	str = ft_memalloc(1);
 	i = 0;
 	j = 0;
@@ -56,14 +54,7 @@ void	fill_matrix(char **matrix, int row, int col)
 	while (j < row)
 	{
 		get_next_line(0, &str);
-		if (gg == 1)
-		{
-			gg = 1;
-			ft_putstr_fd("\n-- fill matrix ->", fd);
-			//ft_putnbr_fd(plateau.x, fd);
-			ft_putstr_fd(str, fd);
-			ft_putstr_fd("<-\n", fd);
-		}
+
 		while (ft_isdigit(str[shift]) || ft_isspace(str[shift]))
 			shift++;
 		while (i < col)
@@ -109,21 +100,8 @@ void	aggregate_plateau(t_plateau *plateau, int step)
 {
 	char	*str;
 
-	int gg = 0;
-
 	str = ft_memalloc(1);
-
 	get_next_line(0, &str);// пропускаем строку с номерами столбцов
-
-	if (gg == 1)
-	{
-		gg = 1;
-		ft_putstr_fd("\n-- platenau ->", fd);
-		//ft_putnbr_fd(plateau.x, fd);
-		ft_putstr_fd(str, fd);
-		ft_putstr_fd("<-\n", fd);
-	}
-
 	free(str);
 	fill_matrix(plateau->board, plateau->n, plateau->x);
 }
@@ -145,19 +123,7 @@ void	get_coordinates(int *n, int *x)
 {
 	char	*str;
 
-	int gg = 1;
-
 	get_next_line(0, &str);
-
-	if (gg == 0)
-	{
-		gg = 1;
-		ft_putstr_fd("\n-- get ->", fd);
-		//ft_putnbr_fd(plateau.x, fd);
-		ft_putstr_fd(str, fd);
-		ft_putstr_fd("<-\n", fd);
-	}
-
 	while (ft_isalpha(*str) || ft_isspace(*str))
 		str++;
 	*n = ft_atoi(str);
@@ -200,28 +166,6 @@ int main()
 				ft_putnbr_fd(player.number, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
-			if (0) // проверка на координаты доски
-			{
-				ft_putstr_fd("->plateau N - ", fd);
-				ft_putnbr_fd(plateau.n, fd);
-				ft_putstr_fd("<-\n->plateau X - ", fd);
-				ft_putnbr_fd(plateau.x, fd);
-				ft_putstr_fd("<-\n", fd);
-			}
-			if (0) //вывод карты
-				print_matrix(plateau.board, plateau.n, plateau.x);
-
-			if (check) // проверка на координаты токена
-			{
-				ft_putstr_fd("->piece N - ", fd);
-				ft_putnbr_fd(piece.n, fd);
-				ft_putstr_fd("<-\n->piece X - ", fd);
-				ft_putnbr_fd(piece.x, fd);
-				ft_putstr_fd("<-\n", fd);
-			}
-			if (0) //вывод токена
-				print_matrix(piece.token, piece.n, piece.x);
-
 		}
 		while (1)
 		{
@@ -230,16 +174,6 @@ int main()
 
 			if (!ft_strcmp(str, stop))
 				return (1);
-
-			//читаем строку
-//			if (str[0] == '$')
-//				; //определяем игрока
-//			else if (str[1] == 'l')
-//				; // обрабатываем карту
-//			else if (str[2] == 'i')
-//				; // определяем фигуру
-//			// вычисляем координаты и выводим результат
-
 
 
 			get_coordinates(&plateau.n, &plateau.x);// 1 определяем размер для поля по первой строке
@@ -259,12 +193,6 @@ int main()
 
 			if (1)
 			{
-				if (0) // проверка на игрока
-				{
-					ft_putstr_fd("->player ", fd);
-					ft_putnbr_fd(player.number, fd);
-					ft_putstr_fd("<-\n", fd);
-				}
 				if (check) // проверка на координаты доски
 				{
 					ft_putstr_fd("->plateau N - ", fd);
@@ -286,13 +214,9 @@ int main()
 				}
 				if (check) //вывод токена
 					print_matrix(piece.token, piece.n, piece.x);
-
 			}
 
-			ft_putnbr_fd(point.n, 1);
-			ft_putchar_fd(' ', 1);
-			ft_putnbr_fd(point.x, 1);
-			ft_putchar_fd('\n', 1);
+			print_answer(&point);
 
 		}
 		close(fd);
