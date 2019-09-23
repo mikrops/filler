@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="test_vm_00_p1_superjeannot_p2" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-f maps/map00 -p1 players/superjeannot.filler -p2 ./mmonahan.filler" PASS_PARENT_ENVS_2="true" PROJECT_NAME="filler" TARGET_NAME="mmonahan.filler" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/cmake-build-debug/filler_vm">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

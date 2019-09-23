@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/22 19:18:17 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 12:54:39 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	**creat_matrix(int row, int col)
 	}
 	return (matrix);
 }
+
 /*
 **	Заполнение матрицы[row][col] из потока 0
 */
@@ -69,7 +70,7 @@ void	fill_matrix(char **matrix, int row, int col)
 }
 
 /*
-**	Определяем номер игрока
+**	Определяем номер игрока по первой строке
 */
 void	player_definition(t_player *player)
 {
@@ -92,9 +93,8 @@ void	player_definition(t_player *player)
 	}
 }
 
-
 /*
-**	Заполняем карту
+**	Заполняем карту поля
 */
 void	aggregate_plateau(t_plateau *plateau, int step)
 {
@@ -106,15 +106,13 @@ void	aggregate_plateau(t_plateau *plateau, int step)
 	fill_matrix(plateau->board, plateau->n, plateau->x);
 }
 
-
 /*
-**	Заполняем карту
+**	Заполняем карту фигуры
 */
 void	aggregate_piece(t_piece *piece)
 {
 	fill_matrix(piece->token, piece->n, piece->x);
 }
-
 
 /*
 **	Определяем размеры фигуры по первой строке
@@ -133,7 +131,6 @@ void	get_coordinates(int *n, int *x)
 		str++;
 	*x = ft_atoi(str);
 }
-
 
 /*
 **	Галвная
@@ -223,7 +220,6 @@ int main()
 	}
 	return 0;
 }
-
 
 /*
 **	Выводим в файл test.txt карту

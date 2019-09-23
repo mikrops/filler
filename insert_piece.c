@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:56:44 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/20 18:40:22 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 13:49:46 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int		check_token_in_board(t_plateau *plateau, t_piece *piece, int row, int col)
 	ft_putnbr_fd(sum, fd_ip);
 	ft_putchar_fd('\n', fd_ip);
 	ft_putstr_fd("\tcheck_token_in_board - EXIT!\n", fd_ip);
-	return (overlap == 1 ? sum : 0);
+	return (overlap == 1 ? sum : -1);
 }
 
 void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
@@ -93,12 +93,12 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 	i = 0;
 	j = 0;
 	min = 999999;
-	sum = 0;
+	sum = -1;
 	point->n = 0;
 	point->x = 0;
-	while (j < plateau->n - piece->n)
+	while (j < plateau->n)// - piece->n)
 	{
-		while (i < plateau->x - piece->x)
+		while (i < plateau->x)// - piece->x)
 		{
 			if (1)
 			{
@@ -109,7 +109,7 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 				ft_putstr_fd("\n", fd_ip);
 			}
 			sum = check_token_in_board(plateau, piece, j, i);
-			if (sum > 0 && min > 0 && sum <= min)
+			if (sum >= 0 && min > 0 && sum <= min)
 			{
 				ft_putstr_fd("insert_piece - 01 \n", fd_ip);
 				min = sum;

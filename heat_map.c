@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/22 17:54:39 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 13:24:39 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		**creat_heatmap(int row, int col)
 }
 
 /*
-**	Заполнение матрицы[row][col] из потока 0
+**	Заполнение матрицы[row][col] из матрицы[row][col]
 */
 
 void	init_heatmap(t_plateau *plateau, t_player *player)
@@ -193,7 +193,7 @@ void	fill_heatmap_full(t_plateau *plateau, int **heatmap, int row, int col)
 **	теловая карта
 */
 
-void heat_map(t_plateau *plateau, t_piece *piece, t_player *player)
+void	heat_map(t_plateau *plateau, t_piece *piece, t_player *player)
 {
 	fd_hm = open("test_hm.txt", O_WRONLY);
 	if (!plateau->heatmap)
