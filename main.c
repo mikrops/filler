@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 18:21:17 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 20:57:43 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ void	fill_matrix(char **matrix, int row, int col)
 		j++;
 		shift = 0;
 	}
+	free(str);
+
+//	==34680==    definitely lost: 32,911 bytes in 1,197 blocks
+//	==34680==    indirectly lost: 16,914 bytes in 826 blocks
+//	==34680==    possibly lost: 0 bytes in 0 blocks
 }
 
 /*
@@ -151,14 +156,14 @@ int main()
 
 			get_coordinates(&plateau.n, &plateau.x);// 1 определяем размер для поля по первой строке
 			plateau.board = ft_map_char(plateau.n, plateau.x); // 0 выделяем память для plateau.board
-			aggregate_plateau(&plateau, FIRST_STEP); // 1(8) или 2(8) заполнение двумерного массива
+			aggregate_plateau(&plateau, 0); // 1(8) или 2(8) заполнение двумерного массива
 
 			get_coordinates(&piece.n, &piece.x);// 1 определяем размер токена по первой строке
 			piece.token = ft_map_char(piece.n, piece.x); // 0 выделяем память для piece.token
 			aggregate_piece(&piece); // 1(8) заполнение двумерного массива
 
 			// создание тепловой карты
-			heat_map(&plateau, &piece, &player);
+			heat_map(&plateau, &player);
 			insert_piece(&plateau, &piece, &point);
 
 			if (1)
@@ -193,9 +198,16 @@ int main()
 					ft_putstr_fd("---+------------+----------+---\n", fd);
 				}
 			}
-			//ОБЯЗАТЕЛЬНО ФРИШИТЬ ФИГУРУ В ЭТОМ МЕСТЕ!
-			//ft_map_char_del(piece);
+
+			ft_map_chr_del(piece.token, piece.n); //фришим токен
 			print_answer(&point);
+
+			if (point.n == 0 && point.x == 0)
+			{
+				ft_map_int_del(plateau.heatmap, plateau.n);
+				ft_map_chr_del(plateau.board, plateau.n);
+			}
+
 
 		}
 		close(fd);

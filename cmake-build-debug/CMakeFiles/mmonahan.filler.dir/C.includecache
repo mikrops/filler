@@ -30,15 +30,17 @@ unistd.h
 ../libft/libft.h
 /Users/mmonahan/school21/git/filler/libft/libft.h
 
-/Users/mmonahan/school21/git/filler/insert_piece.c
-filler.h
-/Users/mmonahan/school21/git/filler/filler.h
-
 /Users/mmonahan/school21/git/filler/libft/libft.h
 string.h
 -
 stdlib.h
 -
 unistd.h
+-
+
+/Users/mmonahan/school21/git/filler/main.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+stdio.h
 -
 

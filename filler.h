@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 18:05:22 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 20:42:29 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "get_next_line/get_next_line.h"
 
 # define FIRST_STEP 0
-# define OTHER_STEPS 1
 
 /*
 **	The board
@@ -40,7 +39,6 @@ typedef struct	s_piece
 	char 		**token;
 	int 		n; //lines //row
 	int 		x; //columns
-	int			length;
 }				t_piece;
 
 /*
@@ -66,8 +64,9 @@ typedef struct	s_point
 
 
 
-void			heat_map(t_plateau *plateau, t_piece *piece, t_player *player);
+void			heat_map(t_plateau *plateau, t_player *player);
 void			insert_piece(t_plateau *plateau, t_piece *piece, t_point *point);
 void			print_answer(t_point *point);
-
+void			ft_map_int_del(int **map, size_t row);
+void			ft_map_chr_del(char **map, size_t row);
 #endif

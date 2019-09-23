@@ -81,8 +81,14 @@ CMakeFiles/mmonahan.filler.dir/libft/ft_lstnew.c.o
 CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o
  /Users/mmonahan/school21/git/filler/libft/ft_map_char.c
  /Users/mmonahan/school21/git/filler/libft/libft.h
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_chr_del.c.o
+ /Users/mmonahan/school21/git/filler/libft/ft_map_chr_del.c
+ /Users/mmonahan/school21/git/filler/libft/libft.h
 CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o
  /Users/mmonahan/school21/git/filler/libft/ft_map_int.c
+ /Users/mmonahan/school21/git/filler/libft/libft.h
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_int_del.c.o
+ /Users/mmonahan/school21/git/filler/libft/ft_map_int_del.c
  /Users/mmonahan/school21/git/filler/libft/libft.h
 CMakeFiles/mmonahan.filler.dir/libft/ft_memalloc.c.o
  /Users/mmonahan/school21/git/filler/libft/ft_memalloc.c

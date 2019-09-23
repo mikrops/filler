@@ -6,7 +6,7 @@
 #    By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/30 21:09:37 by mmonahan          #+#    #+#              #
-#    Updated: 2019/09/23 18:05:22 by mmonahan         ###   ########.fr        #
+#    Updated: 2019/09/23 20:42:29 by mmonahan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,8 @@ SRC = 	ft_memset.c
 		ft_map_char.c
 		ft_map_int.c
 		ft_put_map_int_fd.c
+		ft_map_int_del.c
+		ft_map_chr_del.c
 
 OBJ = $(SRC:.c=.o)
 

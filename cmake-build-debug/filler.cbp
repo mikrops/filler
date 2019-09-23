@@ -161,7 +161,13 @@
 		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_map_char.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
+		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_map_chr_del.c">
+			<Option target="mmonahan.filler"/>
+		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_map_int.c">
+			<Option target="mmonahan.filler"/>
+		</Unit>
+		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_map_int_del.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_memalloc.c">
