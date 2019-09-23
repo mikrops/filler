@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 16:01:00 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 18:22:06 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,5 @@ void	heat_map(t_plateau *plateau, t_piece *piece, t_player *player)
 	//заполнение всей
 	fill_heatmap_full(plateau, plateau->heatmap, plateau->n, plateau->x);
 
-	//ОБЯЗАТЕЛЬНО ФРИШИТЬ ФИГУРУ В ЭТОМ МЕСТЕ!
 	close(fd_hm);
 }

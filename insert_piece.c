@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:56:44 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 16:12:41 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 18:26:20 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 int		fd_ip; // для проверки, потом убрать!!!
 
 /*
-**	сранивать все *:
-**					-2 должен быть один раз!
-**					-1 ни одного раза!
-**		тогда:	считаем сумму цыфр где есть *
-**		иначе:	идем дальше
+**	сранивать все *
 */
 
 int		check_token_in_board(t_plateau *plateau, t_piece *piece, int row, int col)
@@ -133,8 +129,6 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 		ft_putnbr_fd(min, fd_ip);
 		ft_putstr_fd(")\n", fd_ip);
 	}
-
-	//write(1, "8 1\n", 4);
 
 	close(fd_ip);
 }

@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 16:07:44 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 18:21:17 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,22 +146,16 @@ int main()
 		while (1)
 		{
 
-			//get_next_line(0, &str);
-
 			if (!ft_strcmp(str, stop))
-				return (1);
-
+				break ;
 
 			get_coordinates(&plateau.n, &plateau.x);// 1 определяем размер для поля по первой строке
 			plateau.board = ft_map_char(plateau.n, plateau.x); // 0 выделяем память для plateau.board
 			aggregate_plateau(&plateau, FIRST_STEP); // 1(8) или 2(8) заполнение двумерного массива
 
-
 			get_coordinates(&piece.n, &piece.x);// 1 определяем размер токена по первой строке
 			piece.token = ft_map_char(piece.n, piece.x); // 0 выделяем память для piece.token
 			aggregate_piece(&piece); // 1(8) заполнение двумерного массива
-
-
 
 			// создание тепловой карты
 			heat_map(&plateau, &piece, &player);
@@ -199,7 +193,8 @@ int main()
 					ft_putstr_fd("---+------------+----------+---\n", fd);
 				}
 			}
-
+			//ОБЯЗАТЕЛЬНО ФРИШИТЬ ФИГУРУ В ЭТОМ МЕСТЕ!
+			//ft_map_char_del(piece);
 			print_answer(&point);
 
 		}
