@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 13:24:39 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 16:01:00 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,6 @@
 
 
 int		fd_hm; // для проверки, потом убрать!!!
-void	print_heatmap(int **heatmap, int row, int col);
-
-/*
-**	Выделяем область памяти для матрицы[row][col]
-*/
-
-int		**creat_heatmap(int row, int col)
-{
-	int **heatmap;
-	int i;
-	ft_putstr_fd("creat_heatmap\n", fd_hm);
-	i = 0;
-	heatmap = (int **)ft_memalloc(sizeof(int *) * (row + 1));
-	while (i < row)
-	{
-		heatmap[i] = (int *)ft_memalloc(sizeof(int) * col + 1);
-		i++;
-	}
-
-	return (heatmap);
-}
 
 /*
 **	Заполнение матрицы[row][col] из матрицы[row][col]
@@ -182,11 +161,13 @@ void	fill_heatmap_full(t_plateau *plateau, int **heatmap, int row, int col)
 		dot++;
 		j = 0;
 		i = 0;
-		if (0)//if (flag)
-			print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 	}
 	if (1)
-		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
+	{
+		ft_putstr_fd("---+------------+----------+---\n", fd_hm);
+		ft_put_map_int_fd(plateau->heatmap, plateau->n, plateau->x, fd_hm);
+		ft_putstr_fd("---+------------+----------+---\n", fd_hm);
+	}
 }
 
 /*
@@ -198,45 +179,16 @@ void	heat_map(t_plateau *plateau, t_piece *piece, t_player *player)
 	fd_hm = open("test_hm.txt", O_WRONLY);
 	if (!plateau->heatmap)
 	{
-		plateau->heatmap = creat_heatmap(plateau->n, plateau->x);
+		plateau->heatmap = ft_map_int(plateau->n, plateau->x);
 	}
 	init_heatmap(plateau, player);
 
-
-	if (0) //вывод тепловой
-		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 	//заполнение первого куска
 	fill_heatmap(plateau, plateau->heatmap, plateau->n, plateau->x);
-
-	if (0) //вывод тепловой
-		print_heatmap(plateau->heatmap, plateau->n, plateau->x);
 
 	//заполнение всей
 	fill_heatmap_full(plateau, plateau->heatmap, plateau->n, plateau->x);
 
 	//ОБЯЗАТЕЛЬНО ФРИШИТЬ ФИГУРУ В ЭТОМ МЕСТЕ!
 	close(fd_hm);
-}
-
-void	print_heatmap(int **heatmap, int row, int col)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	ft_putstr_fd("---+------------+----------+---\n", fd_hm);
-	while (j < row)
-	{
-		while (i < col)
-		{
-			ft_putnbr_fd(heatmap[j][i], fd_hm);
-			ft_putchar_fd('\t', fd_hm);
-			i++;
-		}
-		ft_putstr_fd("\n", fd_hm);
-		i = 0;
-		j++;
-	}
-	ft_putstr_fd("---+------------+----------+---\n", fd_hm);
 }

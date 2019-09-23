@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 12:54:39 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 16:07:44 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,7 @@
 
 int		fd; // для проверки, потом убрать!!!
 int		check = 1; // активировать проверки, потом убрать
-void	print_matrix(char **matrix, int row, int col); // для теста, потмо убрать
-
-
-/*
-**	Выделяем область памяти для матрицы[row][col]
-*/
-char	**creat_matrix(int row, int col)
-{
-	char **matrix;
-	int i;
-
-	i = 0;
-	matrix = (char **)ft_memalloc(sizeof(char *) * (row + 1));
-	matrix[row] = NULL;
-	while (i < row)
-	{
-		matrix[i] = (char *)ft_memalloc(sizeof(char) * col + 1);
-		matrix[i][col] = '\0';
-		i++;
-	}
-	return (matrix);
-}
+//void	ft_put_map_chr_fd(char **map, int row, int col, int fd); // для теста, потмо убрать
 
 /*
 **	Заполнение матрицы[row][col] из потока 0
@@ -75,7 +54,7 @@ void	fill_matrix(char **matrix, int row, int col)
 void	player_definition(t_player *player)
 {
 	char *str;
-	// 1 gnl
+
 	get_next_line(0, &str);
 	if (player->n == 0 && player->x == 0)
 	{
@@ -174,12 +153,12 @@ int main()
 
 
 			get_coordinates(&plateau.n, &plateau.x);// 1 определяем размер для поля по первой строке
-			plateau.board = creat_matrix(plateau.n, plateau.x); // 0 выделяем память для plateau.board
+			plateau.board = ft_map_char(plateau.n, plateau.x); // 0 выделяем память для plateau.board
 			aggregate_plateau(&plateau, FIRST_STEP); // 1(8) или 2(8) заполнение двумерного массива
 
 
 			get_coordinates(&piece.n, &piece.x);// 1 определяем размер токена по первой строке
-			piece.token = creat_matrix(piece.n, piece.x); // 0 выделяем память для piece.token
+			piece.token = ft_map_char(piece.n, piece.x); // 0 выделяем память для piece.token
 			aggregate_piece(&piece); // 1(8) заполнение двумерного массива
 
 
@@ -199,7 +178,11 @@ int main()
 					ft_putstr_fd("<-\n", fd);
 				}
 				if (check) //вывод карты
-					print_matrix(plateau.board, plateau.n, plateau.x);
+				{
+					ft_putstr_fd("---+------------+----------+---\n", fd);
+					ft_put_map_chr_fd(plateau.board, plateau.n, plateau.x, fd);
+					ft_putstr_fd("---+------------+----------+---\n", fd);
+				}
 
 				if (check) // проверка на координаты токена
 				{
@@ -210,7 +193,11 @@ int main()
 					ft_putstr_fd("<-\n", fd);
 				}
 				if (check) //вывод токена
-					print_matrix(piece.token, piece.n, piece.x);
+				{
+					ft_putstr_fd("---+------------+----------+---\n", fd);
+					ft_put_map_chr_fd(piece.token, piece.n, piece.x, fd);
+					ft_putstr_fd("---+------------+----------+---\n", fd);
+				}
 			}
 
 			print_answer(&point);
@@ -220,30 +207,3 @@ int main()
 	}
 	return 0;
 }
-
-/*
-**	Выводим в файл test.txt карту
-*/
-
-void	print_matrix(char **matrix, int row, int col)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	ft_putstr_fd("---+------------+----------+---\n", fd);
-	while (j < row)
-	{
-		while (i < col)
-		{
-			ft_putchar_fd(matrix[j][i], fd);
-			i++;
-		}
-		ft_putstr_fd("\n", fd);
-		i = 0;
-		j++;
-	}
-	ft_putstr_fd("---+------------+----------+---\n", fd);
-}
-

@@ -993,6 +993,58 @@ CMakeFiles/mmonahan.filler.dir/print_answer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmonahan.filler.dir/print_answer.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mmonahan/school21/git/filler/print_answer.c -o CMakeFiles/mmonahan.filler.dir/print_answer.c.s
 
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o: CMakeFiles/mmonahan.filler.dir/flags.make
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o: ../libft/ft_map_char.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mmonahan/school21/git/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o   -c /Users/mmonahan/school21/git/filler/libft/ft_map_char.c
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mmonahan/school21/git/filler/libft/ft_map_char.c > CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.i
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mmonahan/school21/git/filler/libft/ft_map_char.c -o CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.s
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o: CMakeFiles/mmonahan.filler.dir/flags.make
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o: ../libft/ft_map_int.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mmonahan/school21/git/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o   -c /Users/mmonahan/school21/git/filler/libft/ft_map_int.c
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mmonahan/school21/git/filler/libft/ft_map_int.c > CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.i
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mmonahan/school21/git/filler/libft/ft_map_int.c -o CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.s
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o: CMakeFiles/mmonahan.filler.dir/flags.make
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o: ../libft/ft_put_map_int_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mmonahan/school21/git/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o   -c /Users/mmonahan/school21/git/filler/libft/ft_put_map_int_fd.c
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mmonahan/school21/git/filler/libft/ft_put_map_int_fd.c > CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.i
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mmonahan/school21/git/filler/libft/ft_put_map_int_fd.c -o CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.s
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o: CMakeFiles/mmonahan.filler.dir/flags.make
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o: ../libft/ft_put_map_chr_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mmonahan/school21/git/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o   -c /Users/mmonahan/school21/git/filler/libft/ft_put_map_chr_fd.c
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mmonahan/school21/git/filler/libft/ft_put_map_chr_fd.c > CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.i
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mmonahan/school21/git/filler/libft/ft_put_map_chr_fd.c -o CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.s
+
 # Object files for target mmonahan.filler
 mmonahan_filler_OBJECTS = \
 "CMakeFiles/mmonahan.filler.dir/main.c.o" \
@@ -1066,7 +1118,11 @@ mmonahan_filler_OBJECTS = \
 "CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.o" \
 "CMakeFiles/mmonahan.filler.dir/heat_map.c.o" \
 "CMakeFiles/mmonahan.filler.dir/insert_piece.c.o" \
-"CMakeFiles/mmonahan.filler.dir/print_answer.c.o"
+"CMakeFiles/mmonahan.filler.dir/print_answer.c.o" \
+"CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o" \
+"CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o" \
+"CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o" \
+"CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o"
 
 # External object files for target mmonahan.filler
 mmonahan_filler_EXTERNAL_OBJECTS =
@@ -1143,9 +1199,13 @@ mmonahan.filler: CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.o
 mmonahan.filler: CMakeFiles/mmonahan.filler.dir/heat_map.c.o
 mmonahan.filler: CMakeFiles/mmonahan.filler.dir/insert_piece.c.o
 mmonahan.filler: CMakeFiles/mmonahan.filler.dir/print_answer.c.o
+mmonahan.filler: CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o
+mmonahan.filler: CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o
+mmonahan.filler: CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o
+mmonahan.filler: CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o
 mmonahan.filler: CMakeFiles/mmonahan.filler.dir/build.make
 mmonahan.filler: CMakeFiles/mmonahan.filler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mmonahan/school21/git/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Linking C executable mmonahan.filler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mmonahan/school21/git/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Linking C executable mmonahan.filler"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmonahan.filler.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

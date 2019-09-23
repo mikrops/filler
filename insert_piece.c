@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:56:44 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 13:49:46 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 16:12:41 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 	i = 0;
 	j = 0;
 	min = 999999;
-	sum = -1;
+	//sum = -1;
 	point->n = 0;
 	point->x = 0;
 	while (j < plateau->n)// - piece->n)
@@ -108,6 +108,7 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 				ft_putnbr_fd(i, fd_ip);
 				ft_putstr_fd("\n", fd_ip);
 			}
+
 			sum = check_token_in_board(plateau, piece, j, i);
 			if (sum >= 0 && min > 0 && sum <= min)
 			{
@@ -115,14 +116,6 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 				min = sum;
 				point->n = j;
 				point->x = i;
-				if (0)
-				{
-					ft_putstr_fd("min: ", fd_ip);
-					ft_putnbr_fd(point->n, fd_ip);
-					ft_putchar_fd(' ', fd_ip);
-					ft_putnbr_fd(point->x, fd_ip);
-					ft_putstr_fd("*****\n", fd_ip);
-				}
 			}
 			i++;
 		}

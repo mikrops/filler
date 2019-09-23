@@ -771,6 +771,60 @@ libft/ft_lstnew.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_lstnew.c.s
 .PHONY : libft/ft_lstnew.c.s
 
+libft/ft_map_char.o: libft/ft_map_char.c.o
+
+.PHONY : libft/ft_map_char.o
+
+# target to build an object file
+libft/ft_map_char.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o
+.PHONY : libft/ft_map_char.c.o
+
+libft/ft_map_char.i: libft/ft_map_char.c.i
+
+.PHONY : libft/ft_map_char.i
+
+# target to preprocess a source file
+libft/ft_map_char.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.i
+.PHONY : libft/ft_map_char.c.i
+
+libft/ft_map_char.s: libft/ft_map_char.c.s
+
+.PHONY : libft/ft_map_char.s
+
+# target to generate assembly for a file
+libft/ft_map_char.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.s
+.PHONY : libft/ft_map_char.c.s
+
+libft/ft_map_int.o: libft/ft_map_int.c.o
+
+.PHONY : libft/ft_map_int.o
+
+# target to build an object file
+libft/ft_map_int.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o
+.PHONY : libft/ft_map_int.c.o
+
+libft/ft_map_int.i: libft/ft_map_int.c.i
+
+.PHONY : libft/ft_map_int.i
+
+# target to preprocess a source file
+libft/ft_map_int.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.i
+.PHONY : libft/ft_map_int.c.i
+
+libft/ft_map_int.s: libft/ft_map_int.c.s
+
+.PHONY : libft/ft_map_int.s
+
+# target to generate assembly for a file
+libft/ft_map_int.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.s
+.PHONY : libft/ft_map_int.c.s
+
 libft/ft_memalloc.o: libft/ft_memalloc.c.o
 
 .PHONY : libft/ft_memalloc.o
@@ -986,6 +1040,60 @@ libft/ft_memset.s: libft/ft_memset.c.s
 libft/ft_memset.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_memset.c.s
 .PHONY : libft/ft_memset.c.s
+
+libft/ft_put_map_chr_fd.o: libft/ft_put_map_chr_fd.c.o
+
+.PHONY : libft/ft_put_map_chr_fd.o
+
+# target to build an object file
+libft/ft_put_map_chr_fd.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o
+.PHONY : libft/ft_put_map_chr_fd.c.o
+
+libft/ft_put_map_chr_fd.i: libft/ft_put_map_chr_fd.c.i
+
+.PHONY : libft/ft_put_map_chr_fd.i
+
+# target to preprocess a source file
+libft/ft_put_map_chr_fd.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.i
+.PHONY : libft/ft_put_map_chr_fd.c.i
+
+libft/ft_put_map_chr_fd.s: libft/ft_put_map_chr_fd.c.s
+
+.PHONY : libft/ft_put_map_chr_fd.s
+
+# target to generate assembly for a file
+libft/ft_put_map_chr_fd.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.s
+.PHONY : libft/ft_put_map_chr_fd.c.s
+
+libft/ft_put_map_int_fd.o: libft/ft_put_map_int_fd.c.o
+
+.PHONY : libft/ft_put_map_int_fd.o
+
+# target to build an object file
+libft/ft_put_map_int_fd.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o
+.PHONY : libft/ft_put_map_int_fd.c.o
+
+libft/ft_put_map_int_fd.i: libft/ft_put_map_int_fd.c.i
+
+.PHONY : libft/ft_put_map_int_fd.i
+
+# target to preprocess a source file
+libft/ft_put_map_int_fd.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.i
+.PHONY : libft/ft_put_map_int_fd.c.i
+
+libft/ft_put_map_int_fd.s: libft/ft_put_map_int_fd.c.s
+
+.PHONY : libft/ft_put_map_int_fd.s
+
+# target to generate assembly for a file
+libft/ft_put_map_int_fd.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.s
+.PHONY : libft/ft_put_map_int_fd.c.s
 
 libft/ft_putchar.o: libft/ft_putchar.c.o
 
@@ -2148,6 +2256,12 @@ help:
 	@echo "... libft/ft_lstnew.o"
 	@echo "... libft/ft_lstnew.i"
 	@echo "... libft/ft_lstnew.s"
+	@echo "... libft/ft_map_char.o"
+	@echo "... libft/ft_map_char.i"
+	@echo "... libft/ft_map_char.s"
+	@echo "... libft/ft_map_int.o"
+	@echo "... libft/ft_map_int.i"
+	@echo "... libft/ft_map_int.s"
 	@echo "... libft/ft_memalloc.o"
 	@echo "... libft/ft_memalloc.i"
 	@echo "... libft/ft_memalloc.s"
@@ -2172,6 +2286,12 @@ help:
 	@echo "... libft/ft_memset.o"
 	@echo "... libft/ft_memset.i"
 	@echo "... libft/ft_memset.s"
+	@echo "... libft/ft_put_map_chr_fd.o"
+	@echo "... libft/ft_put_map_chr_fd.i"
+	@echo "... libft/ft_put_map_chr_fd.s"
+	@echo "... libft/ft_put_map_int_fd.o"
+	@echo "... libft/ft_put_map_int_fd.i"
+	@echo "... libft/ft_put_map_int_fd.s"
 	@echo "... libft/ft_putchar.o"
 	@echo "... libft/ft_putchar.i"
 	@echo "... libft/ft_putchar.s"

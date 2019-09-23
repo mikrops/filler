@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 21:16:18 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 12:54:23 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/23 15:59:15 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,4 +120,16 @@ int					ft_islower(int n);
 int					ft_isspace(int c);
 size_t				ft_lstlen(t_list *lst);
 void				ft_del(void *content, size_t size);
+
+/*
+**	My extra functions (filler)
+**	Мои подопнительные функции (filler)
+**
+**	2019/09/23 14:47:07
+*/
+
+char				**ft_map_char(int row, int col);
+int					**ft_map_int(int row, int col);
+void				ft_put_map_int_fd(int **map, int row, int col, int fd);
+void				ft_put_map_chr_fd(char **map, int row, int col, int fd);
 #endif

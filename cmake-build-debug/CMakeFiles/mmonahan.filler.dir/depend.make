@@ -78,6 +78,12 @@ CMakeFiles/mmonahan.filler.dir/libft/ft_lstmap.c.o: ../libft/libft.h
 CMakeFiles/mmonahan.filler.dir/libft/ft_lstnew.c.o: ../libft/ft_lstnew.c
 CMakeFiles/mmonahan.filler.dir/libft/ft_lstnew.c.o: ../libft/libft.h
 
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o: ../libft/ft_map_char.c
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_char.c.o: ../libft/libft.h
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o: ../libft/ft_map_int.c
+CMakeFiles/mmonahan.filler.dir/libft/ft_map_int.c.o: ../libft/libft.h
+
 CMakeFiles/mmonahan.filler.dir/libft/ft_memalloc.c.o: ../libft/ft_memalloc.c
 CMakeFiles/mmonahan.filler.dir/libft/ft_memalloc.c.o: ../libft/libft.h
 
@@ -101,6 +107,12 @@ CMakeFiles/mmonahan.filler.dir/libft/ft_memmove.c.o: ../libft/libft.h
 
 CMakeFiles/mmonahan.filler.dir/libft/ft_memset.c.o: ../libft/ft_memset.c
 CMakeFiles/mmonahan.filler.dir/libft/ft_memset.c.o: ../libft/libft.h
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o: ../libft/ft_put_map_chr_fd.c
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_chr_fd.c.o: ../libft/libft.h
+
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o: ../libft/ft_put_map_int_fd.c
+CMakeFiles/mmonahan.filler.dir/libft/ft_put_map_int_fd.c.o: ../libft/libft.h
 
 CMakeFiles/mmonahan.filler.dir/libft/ft_putchar.c.o: ../libft/ft_putchar.c
 CMakeFiles/mmonahan.filler.dir/libft/ft_putchar.c.o: ../libft/libft.h

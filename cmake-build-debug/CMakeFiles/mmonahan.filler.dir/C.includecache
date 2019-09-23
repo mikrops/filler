@@ -30,10 +30,6 @@ unistd.h
 ../libft/libft.h
 /Users/mmonahan/school21/git/filler/libft/libft.h
 
-/Users/mmonahan/school21/git/filler/heat_map.c
-filler.h
-/Users/mmonahan/school21/git/filler/filler.h
-
 /Users/mmonahan/school21/git/filler/insert_piece.c
 filler.h
 /Users/mmonahan/school21/git/filler/filler.h
