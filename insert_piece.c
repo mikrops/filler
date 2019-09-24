@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:56:44 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 15:45:43 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 18:18:27 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 	//sum = -1;
 	point->n = -1;
 	point->x = -1;
-	while (j < plateau->n)// - piece->min.n)
+	while (j < plateau->n)// - piece->n)
 	{
-		while (i < plateau->x)// - piece->min.x)
+		while (i < plateau->x)// - piece->x)
 		{
 			sum = check_token_in_board(plateau, piece, j, i);
 			if (sum >= 0 && min > 0 && sum <= min)

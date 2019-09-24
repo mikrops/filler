@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 20:21:10 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 18:36:49 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ void	fill_heatmap_full(t_plateau *plateau, int **heatmap, int row, int col)
 
 void	heat_map(t_plateau *plateau, t_player *player)
 {
-	fd_hm = open("test_hm.txt", O_WRONLY);
+	fd_hm = open("./logs/test_hm.txt", O_WRONLY);
 	if (!plateau->heatmap)
 		plateau->heatmap = ft_map_int(plateau->n, plateau->x);
 	init_heatmap(plateau, player);

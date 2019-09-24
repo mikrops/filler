@@ -3,20 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dheidenr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/18 21:05:46 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 12:54:23 by mmonahan         ###   ########.fr       */
+/*   Created: 2018/12/14 19:04:06 by dheidenr          #+#    #+#             */
+/*   Updated: 2019/04/23 17:44:39 by dheidenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
-# define BUFF_SIZE 180
-
-# include "../libft/libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 # include <fcntl.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <unistd.h>
+# include "../libft/libft.h"
 
-int	get_next_line(const int fd, char **line);
+# define BUFF_SIZE 127
+# define TMPLC tmplist->content
+# define LSTLC (*list)->content
+
+int		get_next_line(const int fd, char **line);
 
 #endif

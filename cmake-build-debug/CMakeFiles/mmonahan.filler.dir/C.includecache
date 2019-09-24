@@ -13,22 +13,14 @@ get_next_line/get_next_line.h
 /Users/mmonahan/school21/git/filler/get_next_line/get_next_line.h
 
 /Users/mmonahan/school21/git/filler/get_next_line/get_next_line.h
-fcntl.h
--
-stdlib.h
--
-stdio.h
--
-string.h
--
-sys/types.h
--
-sys/uio.h
--
-unistd.h
--
 ../libft/libft.h
 /Users/mmonahan/school21/git/filler/libft/libft.h
+fcntl.h
+-
+
+/Users/mmonahan/school21/git/filler/insert_piece.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
 
 /Users/mmonahan/school21/git/filler/libft/libft.h
 string.h
@@ -37,8 +29,4 @@ stdlib.h
 -
 unistd.h
 -
-
-/Users/mmonahan/school21/git/filler/main.c
-filler.h
-/Users/mmonahan/school21/git/filler/filler.h
 

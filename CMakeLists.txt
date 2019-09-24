@@ -3,7 +3,7 @@ project(filler C)
 
 set(CMAKE_C_STANDARD 90)
 
-#add_definitions(-Wall -Werror -Wextra)
+add_definitions(-Wall -Werror -Wextra)
 
 add_executable(mmonahan.filler main.c filler.h
         libft/ft_memset.c
@@ -81,7 +81,8 @@ add_executable(mmonahan.filler main.c filler.h
         libft/ft_map_int.c
         libft/ft_put_map_int_fd.c
         libft/ft_put_map_chr_fd.c
-        libft/ft_map_int_del.c libft/ft_map_chr_del.c get_piece.c)
+        libft/ft_map_int_del.c libft/ft_map_chr_del.c
+        get_piece.c)
 
 
 
