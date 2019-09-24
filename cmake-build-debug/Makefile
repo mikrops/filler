@@ -177,6 +177,33 @@ get_piece.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_piece.c.s
 .PHONY : get_piece.c.s
 
+get_player.o: get_player.c.o
+
+.PHONY : get_player.o
+
+# target to build an object file
+get_player.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_player.c.o
+.PHONY : get_player.c.o
+
+get_player.i: get_player.c.i
+
+.PHONY : get_player.i
+
+# target to preprocess a source file
+get_player.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_player.c.i
+.PHONY : get_player.c.i
+
+get_player.s: get_player.c.s
+
+.PHONY : get_player.s
+
+# target to generate assembly for a file
+get_player.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_player.c.s
+.PHONY : get_player.c.s
+
 heat_map.o: heat_map.c.o
 
 .PHONY : heat_map.o
@@ -2271,6 +2298,9 @@ help:
 	@echo "... get_piece.o"
 	@echo "... get_piece.i"
 	@echo "... get_piece.s"
+	@echo "... get_player.o"
+	@echo "... get_player.i"
+	@echo "... get_player.s"
 	@echo "... heat_map.o"
 	@echo "... heat_map.i"
 	@echo "... heat_map.s"

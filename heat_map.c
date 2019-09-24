@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 20:03:36 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 20:56:29 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int		fd_hm; // для проверки, потом убрать!!!
 
 void	init_heatmap(t_plateau *plateau, t_player *player)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -30,20 +30,10 @@ void	init_heatmap(t_plateau *plateau, t_player *player)
 	{
 		while (i < plateau->x)
 		{
-			if (player->number == 1)
-			{
-				if (plateau->board[j][i] == 'O' || plateau->board[j][i] == 'o')
-					plateau->heatmap[j][i] = -2;
-				if (plateau->board[j][i] == 'X' || plateau->board[j][i] == 'x')
-					plateau->heatmap[j][i] = -1;
-			}
-			else
-			{
-				if (plateau->board[j][i] == 'O' || plateau->board[j][i] == 'o')
-					plateau->heatmap[j][i] = -1;
-				if (plateau->board[j][i] == 'X' || plateau->board[j][i] == 'x')
-					plateau->heatmap[j][i] = -2;
-			}
+			if (plateau->board[j][i] == 'O' || plateau->board[j][i] == 'o')
+				plateau->heatmap[j][i] = player->o;
+			if (plateau->board[j][i] == 'X' || plateau->board[j][i] == 'x')
+				plateau->heatmap[j][i] = player->x;
 			if (plateau->board[j][i] == '.')
 				plateau->heatmap[j][i] = 0;
 			i++;
@@ -178,9 +168,7 @@ void	heat_map(t_plateau *plateau, t_player *player)
 {
 	fd_hm = open("./logs/test_hm.txt", O_WRONLY);
 	if (!plateau->heatmap)
-	{
 		plateau->heatmap = ft_map_int(plateau->n, plateau->x);
-	}
 	init_heatmap(plateau, player);
 
 	//заполнение первого куска

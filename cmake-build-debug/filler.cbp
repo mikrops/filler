@@ -92,6 +92,9 @@
 		<Unit filename="/Users/mmonahan/school21/git/filler/get_piece.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
+		<Unit filename="/Users/mmonahan/school21/git/filler/get_player.c">
+			<Option target="mmonahan.filler"/>
+		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/heat_map.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>

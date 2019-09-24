@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 20:03:36 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 20:43:08 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,30 +43,6 @@ void	fill_matrix(char **matrix, int row, int col)
 		j++;
 		shift = 0;
 		free(str);
-	}
-}
-
-/*
-**	Определяем номер игрока по первой строке
-*/
-void	player_definition(t_player *player)
-{
-	char *str;
-
-	get_next_line(0, &str);
-	if (player->n == 0 && player->x == 0)
-	{
-		if (str[10] == '1')
-		{
-			player->number = 1;
-			player->x = -1;
-			player->n = -1;
-		} else if (str[10] == '2')
-		{
-			player->number = 2;
-			player->x = -2;
-			player->n = -2;
-		}
 	}
 }
 
@@ -124,13 +100,9 @@ int main()
 		t_piece		piece;
 		t_point		point;
 
-		player.x = 0;
-		player.n = 0;
 
 		fd = open("./logs/test.txt", O_WRONLY);
-
-		player_definition(&player); //определяем номер игрока
-
+		get_player(&player); //определяем игрока и врага
 
 		if (1)
 		{
@@ -177,16 +149,12 @@ int main()
 				{
 					ft_putstr_fd("->piece N - ", fd);
 					ft_putnbr_fd(piece.n, fd);
-
 					ft_putstr_fd(" [", fd);
 					ft_putnbr_fd(piece.min.n, fd);
-
 					ft_putstr_fd("]<-\n->piece X - ", fd);
 					ft_putnbr_fd(piece.x, fd);
-
 					ft_putstr_fd(" [", fd);
 					ft_putnbr_fd(piece.min.x, fd);
-
 					ft_putstr_fd("]<-\n", fd);
 				}
 				if (check) //вывод токена

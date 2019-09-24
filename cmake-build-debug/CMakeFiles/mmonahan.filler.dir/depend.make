@@ -10,6 +10,11 @@ CMakeFiles/mmonahan.filler.dir/get_piece.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/mmonahan.filler.dir/get_piece.c.o: ../get_piece.c
 CMakeFiles/mmonahan.filler.dir/get_piece.c.o: ../libft/libft.h
 
+CMakeFiles/mmonahan.filler.dir/get_player.c.o: ../filler.h
+CMakeFiles/mmonahan.filler.dir/get_player.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/mmonahan.filler.dir/get_player.c.o: ../get_player.c
+CMakeFiles/mmonahan.filler.dir/get_player.c.o: ../libft/libft.h
+
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../filler.h
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../heat_map.c

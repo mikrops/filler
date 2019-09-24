@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 20:03:36 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 20:52:54 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct	s_piece
 typedef struct	s_player
 {
 	int 		number;
-	int 		n;
+	int 		o;
 	int 		x;
 }				t_player;
 
@@ -69,6 +69,7 @@ typedef struct	s_player
 
 void			heat_map(t_plateau *plateau, t_player *player);
 void			insert_piece(t_plateau *plateau, t_piece *piece, t_point *point);
+void			get_player(t_player *player);
 void			get_piece(t_piece *piece);
 void			print_answer(t_point *point);
 void			ft_map_int_del(int **map, size_t row);

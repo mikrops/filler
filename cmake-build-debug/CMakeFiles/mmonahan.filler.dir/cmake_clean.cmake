@@ -78,6 +78,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmonahan.filler.dir/libft/ft_map_int_del.c.o"
   "CMakeFiles/mmonahan.filler.dir/libft/ft_map_chr_del.c.o"
   "CMakeFiles/mmonahan.filler.dir/get_piece.c.o"
+  "CMakeFiles/mmonahan.filler.dir/get_player.c.o"
   "mmonahan.filler.pdb"
   "mmonahan.filler"
 )

@@ -82,7 +82,7 @@ add_executable(mmonahan.filler main.c filler.h
         libft/ft_put_map_int_fd.c
         libft/ft_put_map_chr_fd.c
         libft/ft_map_int_del.c libft/ft_map_chr_del.c
-        get_piece.c)
+        get_piece.c get_player.c)
 
 
 
