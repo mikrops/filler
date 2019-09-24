@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:56:44 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 20:18:12 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 15:45:43 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int		check_token_in_board(t_plateau *plateau, t_piece *piece, int row, int col)
 	j = 0;
 	sum = 0;
 	overlap = 0;
-	if (row + piece->n > plateau->n || col + piece->x > plateau->x)
+	if (row + piece->min.n > plateau->n || col + piece->min.x > plateau->x)
 		return (-3);
-	while (j < piece->n)
+	while (j < piece->min.n)
 	{
-		while (i < piece->x)
+		while (i < piece->min.x)
 		{
 			if (plateau->heatmap[row + j][col + i] == -2 && piece->token[j][i] == '*')
 				overlap++;
@@ -60,11 +60,11 @@ void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 	j = 0;
 	min = 999999;
 	//sum = -1;
-	point->n = 0;
-	point->x = 0;
-	while (j < plateau->n)// - piece->n)
+	point->n = -1;
+	point->x = -1;
+	while (j < plateau->n)// - piece->min.n)
 	{
-		while (i < plateau->x)// - piece->x)
+		while (i < plateau->x)// - piece->min.x)
 		{
 			sum = check_token_in_board(plateau, piece, j, i);
 			if (sum >= 0 && min > 0 && sum <= min)

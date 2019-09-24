@@ -6,16 +6,14 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 20:57:43 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 16:41:46 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-#include <stdio.h>
 
 int		fd; // для проверки, потом убрать!!!
 int		check = 1; // активировать проверки, потом убрать
-//void	ft_put_map_chr_fd(char **map, int row, int col, int fd); // для теста, потмо убрать
 
 /*
 **	Заполнение матрицы[row][col] из потока 0
@@ -27,7 +25,6 @@ void	fill_matrix(char **matrix, int row, int col)
 	int		j;
 	int		shift;
 
-	str = ft_memalloc(1);
 	i = 0;
 	j = 0;
 	shift = 0;
@@ -45,12 +42,8 @@ void	fill_matrix(char **matrix, int row, int col)
 		i = 0;
 		j++;
 		shift = 0;
+		free(str);
 	}
-	free(str);
-
-//	==34680==    definitely lost: 32,911 bytes in 1,197 blocks
-//	==34680==    indirectly lost: 16,914 bytes in 826 blocks
-//	==34680==    possibly lost: 0 bytes in 0 blocks
 }
 
 /*
@@ -75,6 +68,7 @@ void	player_definition(t_player *player)
 			player->n = -2;
 		}
 	}
+	free(str);
 }
 
 /*
@@ -84,8 +78,7 @@ void	aggregate_plateau(t_plateau *plateau, int step)
 {
 	char	*str;
 
-	str = ft_memalloc(1);
-	get_next_line(0, &str);// пропускаем строку с номерами столбцов
+	get_next_line(0, &str);
 	free(str);
 	fill_matrix(plateau->board, plateau->n, plateau->x);
 }
@@ -104,16 +97,41 @@ void	aggregate_piece(t_piece *piece)
 void	get_coordinates(int *n, int *x)
 {
 	char	*str;
+	char 	*tmp;
 
 	get_next_line(0, &str);
-	while (ft_isalpha(*str) || ft_isspace(*str))
-		str++;
-	*n = ft_atoi(str);
-	while (ft_isdigit(*str))
-		str++;
-	while (ft_isspace(*str))
-		str++;
-	*x = ft_atoi(str);
+
+	if (0)
+	{
+		tmp = str;
+		while (ft_isalpha(*str) || ft_isspace(*str))
+			str++;
+		*n = ft_atoi(str);
+		while (ft_isdigit(*str))
+			str++;
+		while (ft_isspace(*str))
+			str++;
+		*x = ft_atoi(str);
+		free(tmp);
+	}
+	else
+	{
+		if (str[1] == 'i')
+		{
+			*n = ft_atoi(&str[6]);
+			*x = ft_atoi(&str[8]);
+		}
+		else
+		{
+			*n = ft_atoi(&str[8]);
+			*x = ft_atoi(&str[10]);
+		}
+	}
+
+
+	free(str);
+//	str = NULL;
+//	tmp = NULL;
 }
 
 /*
@@ -121,96 +139,95 @@ void	get_coordinates(int *n, int *x)
 */
 int main()
 {
+	t_player 	player;
+	t_plateau	plateau;
+	t_piece		piece;
+	t_point		point;
+
+	player.x = 0;
+	player.n = 0;
+	fd = open("test.txt", O_WRONLY);
+	player_definition(&player); //определяем номер игрока
+
 	if (1)
 	{
-		t_player 	player;
-		t_plateau	plateau;
-		t_piece		piece;
-		t_point		point;
-		char		*str;
-		char		*stop = "qq";
+		if (check) // проверка на игрока
+		{
+			ft_putstr_fd("->player ", fd);
+			ft_putnbr_fd(player.number, fd);
+			ft_putstr_fd("<-\n", fd);
+		}
+	}
+	while (1)
+	{
 
-		str = "abc";
-		player.x = 0;
-		player.n = 0;
+		get_coordinates(&plateau.n, &plateau.x);// 1 определяем размер для поля по первой строке
+		if(!plateau.heatmap)
+			plateau.board = ft_map_char(plateau.n, plateau.x); // 0 выделяем память для plateau.board
+		aggregate_plateau(&plateau, 0); // 1(8) или 2(8) заполнение двумерного массива
 
-		fd = open("test.txt", O_WRONLY);
+		get_coordinates(&piece.n, &piece.x);// 1 определяем размер токена по первой строке
+		piece.token = ft_map_char(piece.n, piece.x); // 0 выделяем память для piece.token
+		aggregate_piece(&piece); // 1(8) заполнение двумерного массива
+		get_piece(&piece);
 
-		player_definition(&player); //определяем номер игрока
-
+		// создание тепловой карты
+		heat_map(&plateau, &player);
+		insert_piece(&plateau, &piece, &point);
 
 		if (1)
 		{
-			if (check) // проверка на игрока
+			if (check) // проверка на координаты доски
 			{
-				ft_putstr_fd("->player ", fd);
-				ft_putnbr_fd(player.number, fd);
+				ft_putstr_fd("->plateau N - ", fd);
+				ft_putnbr_fd(plateau.n, fd);
+				ft_putstr_fd("<-\n->plateau X - ", fd);
+				ft_putnbr_fd(plateau.x, fd);
 				ft_putstr_fd("<-\n", fd);
 			}
+			if (check) //вывод карты
+			{
+				ft_putstr_fd("---+------------+----------+---\n", fd);
+				ft_put_map_chr_fd(plateau.board, plateau.n, plateau.x, fd);
+				ft_putstr_fd("---+------------+----------+---\n", fd);
+			}
+
+			if (check) // проверка на координаты токена
+			{
+				ft_putstr_fd("->piece N - ", fd);
+				ft_putnbr_fd(piece.n, fd);
+				ft_putstr_fd(" [min - ", fd);
+				ft_putnbr_fd(piece.min.n, fd);
+				ft_putstr_fd("]<-\n->piece X - ", fd);
+				ft_putnbr_fd(piece.x, fd);
+				ft_putstr_fd(" [min - ", fd);
+				ft_putnbr_fd(piece.min.x, fd);
+				ft_putstr_fd("]<-\n", fd);
+			}
+			if (check) //вывод токена
+			{
+				ft_putstr_fd("---+------------+----------+---\n", fd);
+				ft_put_map_chr_fd(piece.token, piece.n, piece.x, fd);
+				ft_putstr_fd("---+------------+----------+---\n", fd);
+			}
 		}
-		while (1)
+
+		ft_map_chr_del(piece.token, piece.n); //фришим токен
+		print_answer(&point);
+
+
+		if (point.n == -1 && point.x == -1)
 		{
-
-			if (!ft_strcmp(str, stop))
-				break ;
-
-			get_coordinates(&plateau.n, &plateau.x);// 1 определяем размер для поля по первой строке
-			plateau.board = ft_map_char(plateau.n, plateau.x); // 0 выделяем память для plateau.board
-			aggregate_plateau(&plateau, 0); // 1(8) или 2(8) заполнение двумерного массива
-
-			get_coordinates(&piece.n, &piece.x);// 1 определяем размер токена по первой строке
-			piece.token = ft_map_char(piece.n, piece.x); // 0 выделяем память для piece.token
-			aggregate_piece(&piece); // 1(8) заполнение двумерного массива
-
-			// создание тепловой карты
-			heat_map(&plateau, &player);
-			insert_piece(&plateau, &piece, &point);
-
-			if (1)
-			{
-				if (check) // проверка на координаты доски
-				{
-					ft_putstr_fd("->plateau N - ", fd);
-					ft_putnbr_fd(plateau.n, fd);
-					ft_putstr_fd("<-\n->plateau X - ", fd);
-					ft_putnbr_fd(plateau.x, fd);
-					ft_putstr_fd("<-\n", fd);
-				}
-				if (check) //вывод карты
-				{
-					ft_putstr_fd("---+------------+----------+---\n", fd);
-					ft_put_map_chr_fd(plateau.board, plateau.n, plateau.x, fd);
-					ft_putstr_fd("---+------------+----------+---\n", fd);
-				}
-
-				if (check) // проверка на координаты токена
-				{
-					ft_putstr_fd("->piece N - ", fd);
-					ft_putnbr_fd(piece.n, fd);
-					ft_putstr_fd("<-\n->piece X - ", fd);
-					ft_putnbr_fd(piece.x, fd);
-					ft_putstr_fd("<-\n", fd);
-				}
-				if (check) //вывод токена
-				{
-					ft_putstr_fd("---+------------+----------+---\n", fd);
-					ft_put_map_chr_fd(piece.token, piece.n, piece.x, fd);
-					ft_putstr_fd("---+------------+----------+---\n", fd);
-				}
-			}
-
-			ft_map_chr_del(piece.token, piece.n); //фришим токен
-			print_answer(&point);
-
-			if (point.n == 0 && point.x == 0)
-			{
-				ft_map_int_del(plateau.heatmap, plateau.n);
-				ft_map_chr_del(plateau.board, plateau.n);
-			}
-
-
+			ft_map_int_del(plateau.heatmap, plateau.n);
+			ft_map_chr_del(plateau.board, plateau.n);
+			break ;
 		}
-		close(fd);
+	}
+	close(fd);
+	if (point.n != -1 && point.x != -1)
+	{
+		ft_map_int_del(plateau.heatmap, plateau.n);
+		ft_map_chr_del(plateau.board, plateau.n);
 	}
 	return 0;
 }

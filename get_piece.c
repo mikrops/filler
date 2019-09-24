@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_answer.c                                     :+:      :+:    :+:   */
+/*   get_piece.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:39:30 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 20:14:53 by mmonahan         ###   ########.fr       */
+/*   Created: 2019/09/24 13:56:19 by mmonahan          #+#    #+#             */
+/*   Updated: 2019/09/24 16:13:31 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-void print_answer(t_point *point)
+void	cut_piece(t_piece *piece)
 {
-	if (point->n >= 0 && point->x >= 0)
+	int j;
+	int i;
+
+	j = piece->n - 1;
+	i = piece->x - 1;
+	piece->min.n = 0;
+	piece->min.x = 0;
+	while (j >= 0)
 	{
-		ft_putnbr_fd(point->n, 1);
-		ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(point->x, 1);
-		ft_putchar_fd('\n', 1);
+		while (i >= 0)
+		{
+			if (piece->token[j][i] == '*')
+			{
+				if (piece->min.n <= j + 1)
+					piece->min.n = j + 1;
+				if (piece->min.x <= i + 1)
+					piece->min.x =  i + 1;
+			}
+			i--;
+		}
+		i = piece->x - 1;
+		j--;
 	}
-	else
-	{
-		ft_putnbr_fd(0, 1);
-		ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(0, 1);
-		ft_putchar_fd('\n', 1);
-	}
+}
+
+void get_piece(t_piece *piece)
+{
+	cut_piece(piece);
 }

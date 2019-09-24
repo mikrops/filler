@@ -3,100 +3,141 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dheidenr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/16 01:40:51 by dheidenr          #+#    #+#             */
-/*   Updated: 2019/09/23 20:14:53 by mmonahan         ###   ########.fr       */
+/*   Created: 2019/01/18 21:05:18 by mmonahan          #+#    #+#             */
+/*   Updated: 2019/09/23 12:54:23 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static	t_list	*list_of_fd(t_list **list, int fd)
-{
-	t_list		*newlist;
+/*
+**	GNL in the shape of a glove of infinity welcomes You!
+**
+**	Calling your function get_next_line in a loop will then allow you to read
+**	the text available on a file descriptor one line at a time until the end
+**	of the text, no matter the size of either the text or one of its lines.
+**
+**	The return value can be 1, 0 or -1 depending on whether a line has been
+**	read, when the reading has been completed, or if an error has happened
+**	respectively.
+**	Your function get_next_line must return its result without ’\n’.
+**
+**	The x parameter is the file descriptor that will be used to read.
+**	The second parameter is the address of a pointer to a character that
+**	will be used to save the line read from the file descriptor.
+**
+**
+**	ГНЛ в форме перчатки бесконечности, приветствует Тебя!
+**
+**	Вызов вашей функции get_next_line в цикле позволит вам читать текст,
+**	доступный в дескрипторе файла, по одной строке за раз до конца текста,
+**	независимо от размера текста или одной из его строк.
+**
+**	Возвращаемое значение может быть 1, 0 или -1 в зависимости от того, была ли
+**	прочитана строка, когда считывание было завершено или произошла ошибка,
+**	соответственно.
+**	Ваша функция get_next_line должна возвращать свой результат без '\ n'.
+**
+**	Первый параметр - это дескриптор файла, который будет использоваться
+**	для чтения.
+**	Второй параметр - это адрес указателя на символ, который будет
+**	использоваться для сохранения строки, прочитанной из файлового дескриптора.
+*/
 
-	newlist = *list;
-	while (newlist)
+int	get_next_line(const int fd, char **line)
+{
+	static char	*m[10240];
+	int			ret;
+	char		buf[BUFF_SIZE + 1];
+	char		*tmp;
+
+	if (fd < 0 || fd >= 10240 || line == NULL)
+		return (-1);
+	if (ft_memset(buf, 0, BUFF_SIZE + 1) && (ret = 1) && m[fd] == NULL)
+		m[fd] = ft_memalloc(1);
+	while (ft_strchr(m[fd], '\n') == NULL && (ret = read(fd, buf, BUFF_SIZE)))
 	{
-		if ((int)newlist->content_size == fd)
-			return (newlist);
-		newlist = newlist->next;
+		if ((tmp = m[fd]) && ret < 0)
+			return (-1);
+		if ((m[fd] = ft_strjoin(tmp, buf)) && ft_memset(buf, 0, BUFF_SIZE + 1))
+			ft_strdel(&tmp);
+		if (ft_strchr(m[fd], '\n') != NULL || ret != BUFF_SIZE)
+			break ;
 	}
-	newlist = ft_lstnew("\0", fd);
-	ft_lstadd(list, newlist);
-	newlist = *list;
-	return (newlist);
+	*line = ft_strchr(m[fd], '\n') ? ft_strsub(m[fd], 0, ft_charcount(m[fd],'\n')) :ft_strsub(m[fd], 0, ft_strlen(m[fd]) + 1);
+	tmp = m[fd];
+	m[fd] = ft_strsub(tmp, ft_charcount(tmp, '\n') + 1, ft_strlen(tmp) - ft_charcount(tmp, '\n'));
+	ft_strdel(&tmp);
+	return (!(!ret && !ft_strlen(*line)));
 }
 
-static	char	*recontent(t_list **list)
-{
-	size_t		len;
-	char		*tmp;
-	char		*line;
-	char		*content;
 
-	len = 0;
-	line = NULL;
-	tmp = LSTLC;
-	while (*tmp != '\n' && *tmp != '\0')
+/*
+int		line_verif(char **line, char **tmp, int res, char **str)
+{
+	*str = NULL;
+	if (res == 0 && ft_strlen(*tmp) > 0)
 	{
-		tmp++;
-		len++;
+		*line = *tmp;
+		*tmp = NULL;
+		return (1);
 	}
-	content = line;
-	line = ft_strsub((const char *)LSTLC, 0, len);
-	free(content);
-	content = NULL;
-	content = LSTLC;
-	if (*tmp == '\n')
-		LSTLC = ft_strdup(LSTLC + len + 1);
-	else if (*tmp == '\0')
-		LSTLC = ft_strdup(LSTLC + len);
-	free(content);
-	content = NULL;
+	return (res);
+}
+
+char	*read_line(char *tmp)
+{
+	int		t;
+	char	*line;
+
+	t = 0;
+	while (tmp[t] != '\n')
+		t++;
+	line = (char *)malloc((t + 1) * sizeof(char));
+	line = ft_strncpy(line, tmp, t);
+	line[t] = '\0';
 	return (line);
 }
 
-static	int		ft_tmplc(char **content, t_list **list, char **buff)
+char	*cpycat(char *s1, char *s2)
 {
-	*content = LSTLC;
-	LSTLC = ft_strjoin((char *)LSTLC, *buff);
-	ft_memdel((void *)content);
-	return ((!LSTLC) ? 0 : 1);
+	char	*tmp;
+
+	tmp = NULL;
+	tmp = ft_memalloc(ft_strlen(s1) + ft_strlen(s2));
+	s1 ? tmp = ft_strcpy(tmp, s1) : NULL;
+	s1 ? tmp = ft_strncat(tmp, s2, ft_strlen(s2)) : NULL;
+	//printf("%s\n", tmp);
+	return (tmp);
 }
 
-static	int		cbuff(char **buff)
+int		get_next_line(int const fd, char **line)
 {
-	ft_memdel((void *)buff);
+	static char		*str = NULL;
+	int				res;
+	char			*buf;
+	char			*tmp;
+
+	if (fd < 0 || !line || BUFF_SIZE < 1 || BUFF_SIZE > 10000000)
+		return (-1);
+	buf = ft_strnew(BUFF_SIZE + 1);
+	if (str == NULL)
+		str = ft_memalloc(BUFF_SIZE);
+	tmp = ft_strncpy(ft_memalloc(BUFF_SIZE), str, BUFF_SIZE);
+	while (!(ft_strchr(tmp, '\n')))
+	{
+		if ((res = read(fd, buf, BUFF_SIZE)) < 1)
+			return (line_verif(line, &tmp, res, &str));
+		buf[res] = '\0';
+		tmp = cpycat(tmp, buf);
+	}
+	*line = read_line(tmp);
+	if (ft_strchr(tmp, '\n'))
+		str = ft_strncpy(str, ft_strchr(tmp, '\n') + 1, BUFF_SIZE);
+	free(tmp);
+	free(buf);
 	return (1);
 }
-
-int				get_next_line(const int fd, char **line)
-{
-	static	t_list	*list;
-	char			*content;
-	char			*buff;
-	int				nbread;
-	t_list			*tmplist;
-
-	if ((fd < 0 || read(fd, (buff = NULL), 0) < 0 || line == NULL))
-		return (-1);
-	else if ((!(tmplist = list_of_fd(&list, fd)) &&
-		(!(TMPLC = "\0"))) ||
-		(!(buff = (char *)ft_memalloc((BUFF_SIZE + 1) * sizeof(*buff)))))
-		return (0);
-	while ((!ft_strchr(TMPLC, '\n')) &&
-		((nbread = read(fd, (void *)buff, BUFF_SIZE)) != 0))
-	{
-		if (!(buff[BUFF_SIZE] = '\0') && nbread < 0)
-			return (-1);
-		if (!(ft_tmplc(&content, &tmplist, &buff)))
-			if ((TMPLC = "\0") && ft_strchr(buff, '\n'))
-				break ;
-		(void)ft_memset((void *)buff, 0, BUFF_SIZE + 1);
-	}
-	if (((char *)TMPLC)[0] == '\0' && nbread < BUFF_SIZE && buff[0] == '\0')
-		return (0);
-	return (((*line = recontent(&tmplist)) && cbuff(&buff)) ? 1 : 0);
-}
+*/

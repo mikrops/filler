@@ -150,6 +150,33 @@ get_next_line/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.s
 .PHONY : get_next_line/get_next_line.c.s
 
+get_piece.o: get_piece.c.o
+
+.PHONY : get_piece.o
+
+# target to build an object file
+get_piece.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_piece.c.o
+.PHONY : get_piece.c.o
+
+get_piece.i: get_piece.c.i
+
+.PHONY : get_piece.i
+
+# target to preprocess a source file
+get_piece.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_piece.c.i
+.PHONY : get_piece.c.i
+
+get_piece.s: get_piece.c.s
+
+.PHONY : get_piece.s
+
+# target to generate assembly for a file
+get_piece.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_piece.c.s
+.PHONY : get_piece.c.s
+
 heat_map.o: heat_map.c.o
 
 .PHONY : heat_map.o
@@ -2241,6 +2268,9 @@ help:
 	@echo "... get_next_line/get_next_line.o"
 	@echo "... get_next_line/get_next_line.i"
 	@echo "... get_next_line/get_next_line.s"
+	@echo "... get_piece.o"
+	@echo "... get_piece.i"
+	@echo "... get_piece.s"
 	@echo "... heat_map.o"
 	@echo "... heat_map.i"
 	@echo "... heat_map.s"

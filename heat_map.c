@@ -178,9 +178,7 @@ void	heat_map(t_plateau *plateau, t_player *player)
 {
 	fd_hm = open("test_hm.txt", O_WRONLY);
 	if (!plateau->heatmap)
-	{
 		plateau->heatmap = ft_map_int(plateau->n, plateau->x);
-	}
 	init_heatmap(plateau, player);
 
 	//заполнение первого куска

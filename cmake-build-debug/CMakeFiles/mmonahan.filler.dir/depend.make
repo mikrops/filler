@@ -5,6 +5,11 @@ CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.o: ../get_next_line
 CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/mmonahan.filler.dir/get_next_line/get_next_line.c.o: ../libft/libft.h
 
+CMakeFiles/mmonahan.filler.dir/get_piece.c.o: ../filler.h
+CMakeFiles/mmonahan.filler.dir/get_piece.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/mmonahan.filler.dir/get_piece.c.o: ../get_piece.c
+CMakeFiles/mmonahan.filler.dir/get_piece.c.o: ../libft/libft.h
+
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../filler.h
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../heat_map.c

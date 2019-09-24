@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/23 20:42:29 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/24 14:14:15 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,17 @@
 # include "libft/libft.h"
 # include "get_next_line/get_next_line.h"
 
-# define FIRST_STEP 0
+/*
+**	The point
+**		n - rows
+**		x - columns
+*/
+
+typedef struct	s_point
+{
+	int 		n;
+	int 		x;
+}				t_point;
 
 /*
 **	The board
@@ -26,8 +36,8 @@ typedef struct	s_plateau
 {
 	char 		**board;
 	int			**heatmap;
-	int 		n; //lines //row
-	int 		x; //columns
+	int 		n;
+	int 		x;
 }				t_plateau;
 
 /*
@@ -37,8 +47,9 @@ typedef struct	s_plateau
 typedef struct	s_piece
 {
 	char 		**token;
-	int 		n; //lines //row
-	int 		x; //columns
+	int 		n;
+	int 		x;
+	t_point		min;
 }				t_piece;
 
 /*
@@ -52,20 +63,12 @@ typedef struct	s_player
 	int 		x;
 }				t_player;
 
-/*
-**	The answer
-*/
-
-typedef struct	s_point
-{
-	int 		n;
-	int 		x;
-}				t_point;
 
 
 
 void			heat_map(t_plateau *plateau, t_player *player);
 void			insert_piece(t_plateau *plateau, t_piece *piece, t_point *point);
+void			get_piece(t_piece *piece);
 void			print_answer(t_point *point);
 void			ft_map_int_del(int **map, size_t row);
 void			ft_map_chr_del(char **map, size_t row);

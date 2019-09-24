@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="leaks_vm_01_p2_grati" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-f maps/map01 -p2 players/grati.filler -p1 &quot;valgrind --leak-check=full ./mmonahan.filler&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="filler" TARGET_NAME="mmonahan.filler" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/cmake-build-debug/filler_vm">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
