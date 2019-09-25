@@ -6,13 +6,11 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:08:55 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/25 14:15:07 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 14:53:00 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-
-int		fd_hm;
 
 /*
 **	Установка чисел на 1 больше крестом
@@ -70,18 +68,18 @@ void	put_digit_diagonal(t_plateau *plateau, int row, int col, int find)
 **	Установка '1' вокруг врага
 */
 
-void	fill_heatmap(t_plateau *plateau, int **heatmap, int row, int col)
+void	fill_heatmap(t_plateau *plateau)
 {
 	int i;
 	int j;
 
 	i = 0;
 	j = 0;
-	while (j < row)
+	while (j < plateau->n)
 	{
-		while (i < col)
+		while (i < plateau->x)
 		{
-			if (heatmap[j][i] == -1)
+			if (plateau->heatmap[j][i] == -1)
 			{
 				put_digit_cross(plateau, j, i, 0);
 				put_digit_diagonal(plateau, j, i, 0);
@@ -124,12 +122,6 @@ void	fill_heatmap_full(t_plateau *plateau)
 		}
 		dot++;
 	}
-	if (1)
-	{
-		ft_putstr_fd("---+------------+----------+---\n", fd_hm);
-		ft_put_map_int_fd(plateau->heatmap, plateau->n, plateau->x, fd_hm);
-		ft_putstr_fd("---+------------+----------+---\n", fd_hm);
-	}
 }
 
 /*
@@ -143,7 +135,6 @@ void	heat_map(t_plateau *plateau, t_player *player)
 
 	i = 0;
 	j = 0;
-	fd_hm = open("./logs/test_hm.txt", O_WRONLY);
 	if (!plateau->heatmap)
 		plateau->heatmap = ft_map_int(plateau->n, plateau->x);
 	while (j < plateau->n)
@@ -161,7 +152,6 @@ void	heat_map(t_plateau *plateau, t_player *player)
 		i = 0;
 		j++;
 	}
-	fill_heatmap(plateau, plateau->heatmap, plateau->n, plateau->x);
+	fill_heatmap(plateau);
 	fill_heatmap_full(plateau);
-	close(fd_hm);
 }

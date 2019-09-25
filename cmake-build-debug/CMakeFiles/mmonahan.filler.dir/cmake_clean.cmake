@@ -81,6 +81,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mmonahan.filler.dir/get_plateau.c.o"
   "CMakeFiles/mmonahan.filler.dir/get_size.c.o"
   "CMakeFiles/mmonahan.filler.dir/fill_map.c.o"
+  "CMakeFiles/mmonahan.filler.dir/init_struct.c.o"
   "mmonahan.filler.pdb"
   "mmonahan.filler"
 )

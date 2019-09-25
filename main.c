@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:27:34 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/25 13:15:56 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 18:04:59 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int		fd; // для проверки, потом убрать!!!
 
-void print_answer(t_point *point)
+void print_answer_fd(t_point *point, int fd_t)
 {
 	if (point->n >= 0 && point->x >= 0)
 	{
-		ft_putnbr_fd(point->n, 1);
-		ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(point->x, 1);
-		ft_putchar_fd('\n', 1);
+		ft_putnbr_fd(point->n, fd_t);
+		ft_putchar_fd(' ', fd_t);
+		ft_putnbr_fd(point->x, fd_t);
+		ft_putchar_fd('\n', fd_t);
 	}
 	else
 	{
-		ft_putnbr_fd(0, 1);
-		ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(0, 1);
-		ft_putchar_fd('\n', 1);
+		ft_putnbr_fd(0, fd_t);
+		ft_putchar_fd(' ', fd_t);
+		ft_putnbr_fd(0, fd_t);
+		ft_putchar_fd('\n', fd_t);
 	}
 }
 
@@ -43,8 +43,9 @@ int main()
 	t_piece		piece;
 	t_point		point;
 
+	init_struct(&point, &player, &plateau, &piece);
 	fd = open("./logs/test.txt", O_WRONLY);
-	get_player(&player); //определяем игрока и врага
+	get_player(&player);
 
 	if (1) // проверка на игрока
 	{
@@ -56,8 +57,6 @@ int main()
 	{
 		get_plateau(&plateau);
 		get_piece(&piece);
-
-		// создание тепловой карты
 		heat_map(&plateau, &player);
 		put_piece(&plateau, &piece, &point);
 
@@ -96,11 +95,24 @@ int main()
 				ft_put_map_chr_fd(piece.token, piece.n, piece.x, fd);
 				ft_putstr_fd("---+------------+----------+---\n", fd);
 			}
+			if (1) //вывод ответа
+			{
+				ft_putstr_fd("<qot : ", fd);
+				ft_putstr_fd(player.number == 1 ? "(O: " : "(X: ", fd);
+				ft_putnbr_fd(player.number == 1 ? player.o : player.x, fd);
+				ft_putstr_fd(") ", fd);
+				print_answer_fd(&point, fd);
+			}
+			if (1) //вывод теплоты
+			{
+				ft_putstr_fd("---+------------+----------+---\n", fd);
+				ft_put_map_int_fd(plateau.heatmap, plateau.n, plateau.x, fd);
+				ft_putstr_fd("---+------------+----------+---\n", fd);
+			}
 		}
 		if (piece.token)
 			ft_map_chr_del(piece.token, piece.n); //фришим токен
-		print_answer(&point);
-
+		print_answer_fd(&point, 1);
 		if (point.n < 0 && point.x < 0)
 		{
 			ft_map_int_del(plateau.heatmap, plateau.n);

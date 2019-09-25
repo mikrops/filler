@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/mmonahan/school21/git/filler/fill_map.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+
 /Users/mmonahan/school21/git/filler/filler.h
 libft/libft.h
 /Users/mmonahan/school21/git/filler/libft/libft.h
@@ -30,7 +34,27 @@ unistd.h
 ../libft/libft.h
 /Users/mmonahan/school21/git/filler/libft/libft.h
 
+/Users/mmonahan/school21/git/filler/get_piece.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+
+/Users/mmonahan/school21/git/filler/get_plateau.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+
+/Users/mmonahan/school21/git/filler/get_player.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+
+/Users/mmonahan/school21/git/filler/get_size.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+
 /Users/mmonahan/school21/git/filler/heat_map.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+
+/Users/mmonahan/school21/git/filler/init_struct.c
 filler.h
 /Users/mmonahan/school21/git/filler/filler.h
 
@@ -41,4 +65,12 @@ stdlib.h
 -
 unistd.h
 -
+
+/Users/mmonahan/school21/git/filler/main.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
+
+/Users/mmonahan/school21/git/filler/put_piece.c
+filler.h
+/Users/mmonahan/school21/git/filler/filler.h
 

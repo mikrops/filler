@@ -312,6 +312,33 @@ heat_map.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/heat_map.c.s
 .PHONY : heat_map.c.s
 
+init_struct.o: init_struct.c.o
+
+.PHONY : init_struct.o
+
+# target to build an object file
+init_struct.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/init_struct.c.o
+.PHONY : init_struct.c.o
+
+init_struct.i: init_struct.c.i
+
+.PHONY : init_struct.i
+
+# target to preprocess a source file
+init_struct.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/init_struct.c.i
+.PHONY : init_struct.c.i
+
+init_struct.s: init_struct.c.s
+
+.PHONY : init_struct.s
+
+# target to generate assembly for a file
+init_struct.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/init_struct.c.s
+.PHONY : init_struct.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2367,6 +2394,9 @@ help:
 	@echo "... heat_map.o"
 	@echo "... heat_map.i"
 	@echo "... heat_map.s"
+	@echo "... init_struct.o"
+	@echo "... init_struct.i"
+	@echo "... init_struct.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

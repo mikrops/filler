@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/25 14:04:22 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 18:17:25 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "libft/libft.h"
 # include "get_next_line/get_next_line.h"
-
 
 /*
 **	The point
@@ -28,6 +27,17 @@ typedef struct	s_point
 	int 		n;
 	int 		x;
 }				t_point;
+
+/*
+**	The player
+*/
+
+typedef struct	s_player
+{
+	int 		number;
+	int 		o;
+	int 		x;
+}				t_player;
 
 /*
 **	The board
@@ -50,45 +60,22 @@ typedef struct	s_piece
 	char 		**token;
 	int 		n;
 	int 		x;
+	int			sum;
 	t_point		min;
 }				t_piece;
-
-/*
-**	The player
-*/
-
-typedef struct	s_player
-{
-	int 		number;
-	int 		o;
-	int 		x;
-}				t_player;
-
-/*
-**	The logs
-*/
-
-typedef struct	s_log
-{
-	int 		fd_test;
-	int 		fd_hm;
-	int 		fd_pp;
-}				t_log;
 
 /*
 **	Function for filler
 */
 
+void			init_struct(t_point *pnt, t_player *plr, t_plateau *plt,
+				t_piece *pc);
 void			get_player(t_player *player);
 void			get_plateau(t_plateau *plateau);
 void			get_piece(t_piece *piece);
 void			get_size(int *n, int *x);
-
-/*
-**	Extra function for filler
-*/
-
-void			fill_map(char **matrix, int row, int col);
 void			heat_map(t_plateau *plateau, t_player *player);
 void			put_piece(t_plateau *plateau, t_piece *piece, t_point *point);
+void			fill_map(char **matrix, int row, int col);
+
 #endif

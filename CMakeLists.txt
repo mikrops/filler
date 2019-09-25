@@ -88,7 +88,8 @@ add_executable(mmonahan.filler main.c filler.h
         get_player.c
         get_plateau.c
         get_size.c
-        fill_map.c)
+        fill_map.c
+        init_struct.c)
 
 
 

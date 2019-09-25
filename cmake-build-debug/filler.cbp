@@ -107,6 +107,9 @@
 		<Unit filename="/Users/mmonahan/school21/git/filler/heat_map.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
+		<Unit filename="/Users/mmonahan/school21/git/filler/init_struct.c">
+			<Option target="mmonahan.filler"/>
+		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_atoi.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>

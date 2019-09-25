@@ -35,6 +35,11 @@ CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../heat_map.c
 CMakeFiles/mmonahan.filler.dir/heat_map.c.o: ../libft/libft.h
 
+CMakeFiles/mmonahan.filler.dir/init_struct.c.o: ../filler.h
+CMakeFiles/mmonahan.filler.dir/init_struct.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/mmonahan.filler.dir/init_struct.c.o: ../init_struct.c
+CMakeFiles/mmonahan.filler.dir/init_struct.c.o: ../libft/libft.h
+
 CMakeFiles/mmonahan.filler.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/mmonahan.filler.dir/libft/ft_atoi.c.o: ../libft/libft.h
 

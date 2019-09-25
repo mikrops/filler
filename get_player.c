@@ -45,8 +45,5 @@ void	player_definition(t_player *player)
 
 void	get_player(t_player *player)
 {
-	player->x = 0;
-	player->o = 0;
-	player->number = 0;
 	player_definition(player);
 }
