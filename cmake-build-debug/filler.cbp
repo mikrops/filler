@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/mmonahan/school21/git/filler/fill_map.c">
+			<Option target="mmonahan.filler"/>
+		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/filler.h">
 			<Option target="mmonahan.filler"/>
 		</Unit>
@@ -92,13 +95,16 @@
 		<Unit filename="/Users/mmonahan/school21/git/filler/get_piece.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
+		<Unit filename="/Users/mmonahan/school21/git/filler/get_plateau.c">
+			<Option target="mmonahan.filler"/>
+		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/get_player.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
-		<Unit filename="/Users/mmonahan/school21/git/filler/heat_map.c">
+		<Unit filename="/Users/mmonahan/school21/git/filler/get_size.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
-		<Unit filename="/Users/mmonahan/school21/git/filler/insert_piece.c">
+		<Unit filename="/Users/mmonahan/school21/git/filler/heat_map.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/libft/ft_atoi.c">
@@ -326,7 +332,7 @@
 		<Unit filename="/Users/mmonahan/school21/git/filler/main.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
-		<Unit filename="/Users/mmonahan/school21/git/filler/print_answer.c">
+		<Unit filename="/Users/mmonahan/school21/git/filler/put_piece.c">
 			<Option target="mmonahan.filler"/>
 		</Unit>
 		<Unit filename="/Users/mmonahan/school21/git/filler/CMakeLists.txt">

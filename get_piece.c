@@ -6,11 +6,24 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 13:56:19 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 16:13:31 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 12:55:39 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
+
+/*
+**	Заполняем карту фигуры
+*/
+
+void	fill_token(t_piece *piece)
+{
+	fill_map(piece->token, piece->n, piece->x);
+}
+
+/*
+**	Определяем минимальные размеры токена
+*/
 
 void	cut_piece(t_piece *piece)
 {
@@ -39,7 +52,14 @@ void	cut_piece(t_piece *piece)
 	}
 }
 
-void get_piece(t_piece *piece)
+/*
+**	Получаем данные токена
+*/
+
+void	get_piece(t_piece *piece)
 {
+	get_size(&piece->n, &piece->x);
+	piece->token = ft_map_char(piece->n, piece->x);
+	fill_token(piece);
 	cut_piece(piece);
 }

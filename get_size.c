@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_answer.c                                     :+:      :+:    :+:   */
+/*   get_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:39:30 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 20:03:36 by mmonahan         ###   ########.fr       */
+/*   Created: 2019/09/25 12:21:10 by mmonahan          #+#    #+#             */
+/*   Updated: 2019/09/25 12:21:10 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-void print_answer(t_point *point)
+/*
+**	Определяем размеры фигуры по первой строке
+*/
+
+void	get_size(int *n, int *x)
 {
-	if (point->n >= 0 && point->x >= 0)
-	{
-		ft_putnbr_fd(point->n, 1);
-		ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(point->x, 1);
-		ft_putchar_fd('\n', 1);
-	}
-	else
-	{
-		ft_putnbr_fd(0, 1);
-		ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(0, 1);
-		ft_putchar_fd('\n', 1);
-	}
+	char	*str;
+
+	get_next_line(0, &str);
+	while (ft_isalpha(*str) || ft_isspace(*str))
+		str++;
+	*n = ft_atoi(str);
+	while (ft_isdigit(*str))
+		str++;
+	while (ft_isspace(*str))
+		str++;
+	*x = ft_atoi(str);
 }

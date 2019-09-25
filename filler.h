@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 20:52:54 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 13:10:06 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 
 /*
-**	The answer
+**	The point
 **		n: rows
 **		x: columns
 */
@@ -64,14 +64,20 @@ typedef struct	s_player
 	int 		x;
 }				t_player;
 
+/*
+**	Function for filler
+*/
 
-
-
-void			heat_map(t_plateau *plateau, t_player *player);
-void			insert_piece(t_plateau *plateau, t_piece *piece, t_point *point);
 void			get_player(t_player *player);
+void			get_plateau(t_plateau *plateau);
 void			get_piece(t_piece *piece);
-void			print_answer(t_point *point);
-void			ft_map_int_del(int **map, size_t row);
-void			ft_map_chr_del(char **map, size_t row);
+void			get_size(int *n, int *x);
+
+/*
+**	Extra function for filler
+*/
+
+void			fill_map(char **matrix, int row, int col);
+void			heat_map(t_plateau *plateau, t_player *player);
+void			put_piece(t_plateau *plateau, t_piece *piece, t_point *point);
 #endif

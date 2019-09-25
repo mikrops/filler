@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 17:56:44 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 20:03:36 by mmonahan         ###   ########.fr       */
+/*   Created: 2019/09/25 13:10:44 by mmonahan          #+#    #+#             */
+/*   Updated: 2019/09/25 13:10:44 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		check_token_in_board(t_plateau *plateau, t_piece *piece, int row, int col)
 	return (overlap == 1 ? sum : -1);
 }
 
-void	insert_piece(t_plateau *plateau, t_piece *piece, t_point *point)
+void	put_piece(t_plateau *plateau, t_piece *piece, t_point *point)
 {
 	int i;
 	int j;

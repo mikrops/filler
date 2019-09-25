@@ -132,4 +132,6 @@ char				**ft_map_char(int row, int col);
 int					**ft_map_int(int row, int col);
 void				ft_put_map_int_fd(int **map, int row, int col, int fd);
 void				ft_put_map_chr_fd(char **map, int row, int col, int fd);
+void				ft_map_int_del(int **map, size_t row);
+void				ft_map_chr_del(char **map, size_t row);
 #endif

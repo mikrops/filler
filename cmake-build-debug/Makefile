@@ -123,6 +123,33 @@ mmonahan.filler/fast:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/build
 .PHONY : mmonahan.filler/fast
 
+fill_map.o: fill_map.c.o
+
+.PHONY : fill_map.o
+
+# target to build an object file
+fill_map.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/fill_map.c.o
+.PHONY : fill_map.c.o
+
+fill_map.i: fill_map.c.i
+
+.PHONY : fill_map.i
+
+# target to preprocess a source file
+fill_map.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/fill_map.c.i
+.PHONY : fill_map.c.i
+
+fill_map.s: fill_map.c.s
+
+.PHONY : fill_map.s
+
+# target to generate assembly for a file
+fill_map.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/fill_map.c.s
+.PHONY : fill_map.c.s
+
 get_next_line/get_next_line.o: get_next_line/get_next_line.c.o
 
 .PHONY : get_next_line/get_next_line.o
@@ -177,6 +204,33 @@ get_piece.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_piece.c.s
 .PHONY : get_piece.c.s
 
+get_plateau.o: get_plateau.c.o
+
+.PHONY : get_plateau.o
+
+# target to build an object file
+get_plateau.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_plateau.c.o
+.PHONY : get_plateau.c.o
+
+get_plateau.i: get_plateau.c.i
+
+.PHONY : get_plateau.i
+
+# target to preprocess a source file
+get_plateau.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_plateau.c.i
+.PHONY : get_plateau.c.i
+
+get_plateau.s: get_plateau.c.s
+
+.PHONY : get_plateau.s
+
+# target to generate assembly for a file
+get_plateau.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_plateau.c.s
+.PHONY : get_plateau.c.s
+
 get_player.o: get_player.c.o
 
 .PHONY : get_player.o
@@ -204,6 +258,33 @@ get_player.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_player.c.s
 .PHONY : get_player.c.s
 
+get_size.o: get_size.c.o
+
+.PHONY : get_size.o
+
+# target to build an object file
+get_size.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_size.c.o
+.PHONY : get_size.c.o
+
+get_size.i: get_size.c.i
+
+.PHONY : get_size.i
+
+# target to preprocess a source file
+get_size.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_size.c.i
+.PHONY : get_size.c.i
+
+get_size.s: get_size.c.s
+
+.PHONY : get_size.s
+
+# target to generate assembly for a file
+get_size.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/get_size.c.s
+.PHONY : get_size.c.s
+
 heat_map.o: heat_map.c.o
 
 .PHONY : heat_map.o
@@ -230,33 +311,6 @@ heat_map.s: heat_map.c.s
 heat_map.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/heat_map.c.s
 .PHONY : heat_map.c.s
-
-insert_piece.o: insert_piece.c.o
-
-.PHONY : insert_piece.o
-
-# target to build an object file
-insert_piece.c.o:
-	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/insert_piece.c.o
-.PHONY : insert_piece.c.o
-
-insert_piece.i: insert_piece.c.i
-
-.PHONY : insert_piece.i
-
-# target to preprocess a source file
-insert_piece.c.i:
-	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/insert_piece.c.i
-.PHONY : insert_piece.c.i
-
-insert_piece.s: insert_piece.c.s
-
-.PHONY : insert_piece.s
-
-# target to generate assembly for a file
-insert_piece.c.s:
-	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/insert_piece.c.s
-.PHONY : insert_piece.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -2256,32 +2310,32 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/main.c.s
 .PHONY : main.c.s
 
-print_answer.o: print_answer.c.o
+put_piece.o: put_piece.c.o
 
-.PHONY : print_answer.o
+.PHONY : put_piece.o
 
 # target to build an object file
-print_answer.c.o:
-	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/print_answer.c.o
-.PHONY : print_answer.c.o
+put_piece.c.o:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/put_piece.c.o
+.PHONY : put_piece.c.o
 
-print_answer.i: print_answer.c.i
+put_piece.i: put_piece.c.i
 
-.PHONY : print_answer.i
+.PHONY : put_piece.i
 
 # target to preprocess a source file
-print_answer.c.i:
-	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/print_answer.c.i
-.PHONY : print_answer.c.i
+put_piece.c.i:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/put_piece.c.i
+.PHONY : put_piece.c.i
 
-print_answer.s: print_answer.c.s
+put_piece.s: put_piece.c.s
 
-.PHONY : print_answer.s
+.PHONY : put_piece.s
 
 # target to generate assembly for a file
-print_answer.c.s:
-	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/print_answer.c.s
-.PHONY : print_answer.c.s
+put_piece.c.s:
+	$(MAKE) -f CMakeFiles/mmonahan.filler.dir/build.make CMakeFiles/mmonahan.filler.dir/put_piece.c.s
+.PHONY : put_piece.c.s
 
 # Help Target
 help:
@@ -2292,21 +2346,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mmonahan.filler"
+	@echo "... fill_map.o"
+	@echo "... fill_map.i"
+	@echo "... fill_map.s"
 	@echo "... get_next_line/get_next_line.o"
 	@echo "... get_next_line/get_next_line.i"
 	@echo "... get_next_line/get_next_line.s"
 	@echo "... get_piece.o"
 	@echo "... get_piece.i"
 	@echo "... get_piece.s"
+	@echo "... get_plateau.o"
+	@echo "... get_plateau.i"
+	@echo "... get_plateau.s"
 	@echo "... get_player.o"
 	@echo "... get_player.i"
 	@echo "... get_player.s"
+	@echo "... get_size.o"
+	@echo "... get_size.i"
+	@echo "... get_size.s"
 	@echo "... heat_map.o"
 	@echo "... heat_map.i"
 	@echo "... heat_map.s"
-	@echo "... insert_piece.o"
-	@echo "... insert_piece.i"
-	@echo "... insert_piece.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2529,9 +2589,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... print_answer.o"
-	@echo "... print_answer.i"
-	@echo "... print_answer.s"
+	@echo "... put_piece.o"
+	@echo "... put_piece.i"
+	@echo "... put_piece.s"
 .PHONY : help
 
 

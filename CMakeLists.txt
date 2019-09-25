@@ -76,13 +76,19 @@ add_executable(mmonahan.filler main.c filler.h
         libft/libft.h
         get_next_line/get_next_line.c
         get_next_line/get_next_line.h
-        heat_map.c insert_piece.c print_answer.c
+        heat_map.c
+        put_piece.c
         libft/ft_map_char.c
         libft/ft_map_int.c
         libft/ft_put_map_int_fd.c
         libft/ft_put_map_chr_fd.c
-        libft/ft_map_int_del.c libft/ft_map_chr_del.c
-        get_piece.c get_player.c)
+        libft/ft_map_int_del.c
+        libft/ft_map_chr_del.c
+        get_piece.c
+        get_player.c
+        get_plateau.c
+        get_size.c
+        fill_map.c)
 
 
 
