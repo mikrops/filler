@@ -29,7 +29,6 @@ void	fill_map(char **map, int row, int col)
 	while (j < row)
 	{
 		get_next_line(0, &str);
-
 		while (ft_isdigit(str[shift]) || ft_isspace(str[shift]))
 			shift++;
 		while (i < col)

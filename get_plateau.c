@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 11:39:41 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/25 12:54:25 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 20:53:49 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	fill_board(t_plateau *plateau, int step)
 {
 	char	*str;
 
-	if (step)
-		;
+	step = 0;
 	str = ft_memalloc(1);
 	get_next_line(0, &str);
 	free(str);

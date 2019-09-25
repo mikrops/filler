@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 20:37:42 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/24 20:52:54 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 20:38:41 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,11 @@ void	player_definition(t_player *player)
 **	Получаем данные игроков
 */
 
-void	get_player(t_player *player)
+void	get_player(t_player *player, int fd)
 {
 	player_definition(player);
+	ft_putstr_fd("->player ", fd);
+	ft_putnbr_fd(player->number, fd);
+	ft_putstr_fd("<-\n", fd);
+	ft_putstr_fd("---+------------+----------+---\n", fd);
 }
