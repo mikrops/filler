@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 13:56:19 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/25 12:55:39 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 14:16:28 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	cut_piece(t_piece *piece)
 				if (piece->min.n <= j + 1)
 					piece->min.n = j + 1;
 				if (piece->min.x <= i + 1)
-					piece->min.x =  i + 1;
+					piece->min.x = i + 1;
 			}
 			i--;
 		}

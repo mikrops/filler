@@ -6,7 +6,7 @@
 /*   By: mmonahan <mmonahan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 16:28:45 by mmonahan          #+#    #+#             */
-/*   Updated: 2019/09/25 13:10:06 by mmonahan         ###   ########.fr       */
+/*   Updated: 2019/09/25 14:04:22 by mmonahan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,17 @@ typedef struct	s_player
 	int 		o;
 	int 		x;
 }				t_player;
+
+/*
+**	The logs
+*/
+
+typedef struct	s_log
+{
+	int 		fd_test;
+	int 		fd_hm;
+	int 		fd_pp;
+}				t_log;
 
 /*
 **	Function for filler
