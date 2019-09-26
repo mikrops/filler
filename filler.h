@@ -74,8 +74,7 @@ void			get_player(t_player *player, int fd);
 void			get_plateau(t_plateau *plateau);
 void			get_piece(t_piece *piece);
 void			get_size(int *n, int *x);
-void			heat_map(t_plateau *plateau, t_player *player);
 void			put_piece(t_plateau *plateau, t_piece *piece, t_point *point);
+void			heat_map(t_plateau *plateau, t_player *player);
 void			fill_map(char **matrix, int row, int col);
-
 #endif
